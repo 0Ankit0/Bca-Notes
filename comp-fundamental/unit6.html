@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 6: Data Communication and Computer Network</title>
+    <style>
+        .navigation {
+            margin-top: 40px;
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .navigation h2 {
+            color: #004085;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .navigation li {
+            display: inline-block;
+            background-color: #0056b3;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navigation li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navigation li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body style="font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333;">
+    <div style="max-width: 900px; margin: auto; background: #fff; padding: 20px 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+      <h1 style="text-align: center; color: #004085; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">Unit 6: Data Communication and Computer Network</h1>
+
+
+
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Focus:</strong> This unit is crucial for understanding how computers communicate. Pay close attention to data transmission modes and media, different types of networks, and especially network topologies, as these are frequently tested concepts.
+      </p>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">6.1 Data Communication</h2>
+      <h3 style="color: #0056b3; margin-top: 15px;">6.1.1 Introduction to Data Communication</h3>
+      <p>
+        Data Communication is the process of transmitting digital or analog data between two or more computing devices, systems, or locations via some form of transmission medium. It forms the backbone of all networked interactions, from sending an email to browsing the web.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">6.1.2 Basic Elements of a Communication System</h3>
+      <p>
+        A communication system requires five basic elements to function effectively:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Sender (Source):</strong> The device that originates the data message (e.g., a computer, smartphone).</li>
+        <li><strong>Receiver (Destination):</strong> The device that receives the data message.</li>
+        <li><strong>Medium:</strong> The physical path over which a message travels (e.g., cables, airwaves).</li>
+        <li><strong>Message:</strong> The data or information to be communicated.</li>
+        <li><strong>Protocol:</strong> A set of rules governing how data is exchanged, ensuring that both sender and receiver understand each other (e.g., TCP/IP).</li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">6.1.3 Data Transmission Modes</h3>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Be prepared to define and differentiate between Simplex, Half-Duplex, and Full-Duplex transmission modes with examples.
+      </p>
+      <p>
+        Transmission modes define the direction of flow of information between two linked devices.
+      </p>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Mode</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Description</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Simplex</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Data flows in only one direction. The channel is one-way.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Radio broadcasting, traditional television.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Half-Duplex</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Data can flow in both directions, but only one direction at a time.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Walkie-talkies (you must wait for the other person to stop talking).</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Full-Duplex</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Data can flow simultaneously in both directions.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Telephone conversations, high-speed network connections.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">6.1.4 Data Transmission Speed</h3>
+      <p>
+        Data transmission speed defines the capacity of the transmission medium, typically measured in bits per second (bps).
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Narrowband:</strong> Low speed, typically below 64 Kbps. Used for legacy systems like telegraph and low-speed modems.</li>
+        <li><strong>Voiceband:</strong> Medium speed, generally 300 bps to 9600 bps. Historically used for voice and basic phone-line modems.</li>
+        <li><strong>Broadband:</strong> High speed, offering transfer rates of 1 Mbps and higher. Used for high-speed internet, video streaming, and modern local area networks (LANs).</li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">6.1.5 Data Transmission Media</h3>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Explaining different transmission media in detail is a common exam question.
+      </p>
+      <p>
+        These are the physical channels through which data travels. They are categorized as guided (wired) or unguided (wireless).
+      </p>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Type</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Medium</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Characteristics & Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 8px; text-align: left;">Guided (Wired)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Twisted-Pair Wire</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Two insulated copper wires twisted together to reduce electromagnetic interference. Used for telephone lines and older Ethernet (LANs).</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Coaxial Cable</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">A central copper conductor surrounded by an insulator and a braided shield. Offers higher bandwidth than twisted-pair. Used for cable TV and older LANs.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Optical Fibers</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Transmits data as pulses of light through thin strands of glass or plastic. Offers extremely high speed, immunity to electrical interference, and long distances. Used for backbone networks and high-speed internet (FTTH).</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 8px; text-align: left;">Unguided (Wireless)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Microwave System</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Uses high-frequency radio signals transmitted via line-of-sight parabolic antennae. Used for long-distance terrestrial communication.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Communication Satellite</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Uses geostationary satellites to relay signals over very long distances, covering large geographical areas. Used for global communication, TV broadcasting, and satellite internet.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">6.2 Computer Network</h2>
+      <h3 style="color: #0056b3; margin-top: 15px;">6.2.1 Definition of Computer Network</h3>
+      <p>
+        A Computer Network is an interconnected group of two or more independent computers and peripheral devices linked together to share resources (data, hardware, software) and communicate. Networks enable efficient resource utilization, faster communication, and centralized data management.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">6.2.2 Types of Computer Network</h3>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Expect questions asking you to define and differentiate between various types of computer networks (PAN, LAN, MAN, WAN).
+      </p>
+      <p>
+        Networks are classified based on their geographical scope and the number of devices they connect:
+      </p>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Type</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Acronym</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Range</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Personal Area Network</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">PAN</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Few meters (e.g., connecting devices around a single person)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bluetooth, connecting a phone to earbuds.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Local Area Network</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">LAN</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Small area (e.g., a single office, building, or campus)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Connecting all computers and printers in an office.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Campus Area Network</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">CAN</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Multiple buildings within a limited geographical area (e.g., a university campus)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Interconnecting multiple LANs within a campus.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Metropolitan Area Network</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">MAN</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">City or a large geographical area</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Connecting LANs within a city (e.g., government services across a metro area).</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Wide Area Network</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">WAN</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Large geographical area (e.g., across countries or continents)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">The Internet is the world's largest WAN.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Advantages and Disadvantages of Networking:</h3>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Advantages</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Disadvantages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Resource Sharing:</strong> Enables users to share expensive resources like printers, scanners, and software licenses.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>High Initial Setup Cost:</strong> Cabling, hardware (routers, switches), and configuration can be expensive.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Communication:</strong> Facilitates fast, efficient communication (email, instant messaging, video conferencing).</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Security Vulnerabilities:</strong> Networks are susceptible to data breaches, viruses, and other cyber threats.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Centralization of Data:</strong> Data can be stored on a central server for easier backup, management, and access control.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Network Failure:</strong> If the central server or critical network component fails, the work of all connected systems can be halted.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">6.2.3 Network Topologies</h3>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Explaining different network topologies with diagrams (or textual descriptions) and their advantages/disadvantages is a very common and important exam question.
+      </p>
+      <p>
+        Network topology refers to the physical or logical arrangement of the network components and how they are connected. It dictates how data flows within the network.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Bus Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Description:</strong> All devices are connected to a single central cable (backbone).</li>
+            <li><strong>Advantages:</strong> Simple, low cabling cost.</li>
+            <li><strong>Disadvantages:</strong> Single cable failure takes down the whole network; difficult to troubleshoot; performance degrades with many devices.</li>
+          </ul>
+        </li>
+        <li><strong>Star Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Description:</strong> All devices connect to a central hub or switch.</li>
+            <li><strong>Advantages:</strong> Easy to install, failure of one device doesn't affect others, easy troubleshooting.</li>
+            <li><strong>Disadvantages:</strong> High cabling cost; if the central hub fails, the whole network fails.</li>
+          </ul>
+        </li>
+        <li><strong>Ring Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Description:</strong> Devices are connected in a closed loop, where data travels in one direction.</li>
+            <li><strong>Advantages:</strong> Data transfer is high-speed; no collisions (in token ring).</li>
+            <li><strong>Disadvantages:</strong> Failure of one link can affect the whole network; difficult to add/remove devices.</li>
+          </ul>
+        </li>
+        <li><strong>Mesh Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Description:</strong> Every device is connected directly to every other device.</li>
+            <li><strong>Advantages:</strong> Extremely reliable (redundancy); used in critical networks.</li>
+            <li><strong>Disadvantages:</strong> Very expensive and complex; excessive cabling required.</li>
+          </ul>
+        </li>
+        <li><strong>Tree Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Description:</strong> A hierarchical structure where a central root node connects to other nodes, which in turn connect to more nodes, forming a tree-like structure. Often a combination of bus and star.</li>
+            <li><strong>Advantages:</strong> Easy to extend; fault isolation is easier than bus.</li>
+            <li><strong>Disadvantages:</strong> If the central hub fails, entire segments fail; complex cabling.</li>
+          </ul>
+        </li>
+        <li><strong>Hybrid Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Description:</strong> A combination of two or more different topologies.</li>
+            <li><strong>Advantages:</strong> Flexible and scalable; can be designed to meet specific needs.</li>
+            <li><strong>Disadvantages:</strong> Complex design and implementation; expensive.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">6.3 Intranet, Extranet, and Internet</h2>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Differentiating between Intranet, Extranet, and Internet is a common short note or comparison question.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Internet:</strong> A public, global system of interconnected computer networks that use the standard Internet Protocol Suite (TCP/IP). It is accessible to everyone worldwide.</li>
+        <li><strong>Intranet:</strong> A private network belonging to an organization, accessible only to its members, employees, or authorized users. It uses Internet protocols (like web browsers) for internal communication and information sharing.</li>
+        <li><strong>Extranet:</strong> An extension of an organization's Intranet that allows controlled access to authorized customers, vendors, partners, or suppliers from outside the organization. It facilitates secure business-to-business communication.</li>
+      </ul>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">6.4 E-mail (Electronic Mail)</h2>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> E-mail is often covered in short notes or questions comparing its role with the Internet.
+      </p>
+      <p>
+        E-mail is a method of exchanging messages between users using electronic devices. It is one of the most widely used applications on the Internet.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Definition:</strong> A digital communication method that enables asynchronous message delivery over the Internet.</li>
+        <li><strong>Role in Modern Life:</strong> Essential for formal communication, marketing, customer service, and digital identity verification.</li>
+      </ul>
+
+      <div style="margin-top: 40px; padding: 15px; background-color: #e9f7ef; border-left: 5px solid #28a745; font-style: italic; color: #28a745;">
+        <p><strong>Course Code:</strong> CMP 116</p>
+        <p><strong>Credit Hours:</strong> 3</p>
+        <p>This unit provides comprehensive knowledge about data communication principles and computer networking concepts.</p>
+      </div>
+
+      <div class="important-questions">
+        <h2>Important Questions</h2>
+        <ul>
+            <li>What is network topology? Explain basic network topologies with diagram. (7)</li>
+            <li>Define computer network. Explain different types of computer network. (7)</li>
+            <li>Define Network. Explain different types of network topologies in brief. (8)</li>
+            <li>What is computer network. Explain different network topologies with their advantages and disadvantages. OR Define Data Communication. Explain different transmission media in details. (7)</li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="unit1.html">Unit 1</a></li>
+            <li><a href="unit2.html">Unit 2</a></li>
+            <li><a href="unit3.html">Unit 3</a></li>
+            <li><a href="unit4.html">Unit 4</a></li>
+            <li><a href="unit5.html">Unit 5</a></li>
+            <li><a href="unit7.html">Unit 7</a></li>
+            <li><a href="unit8.html">Unit 8</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

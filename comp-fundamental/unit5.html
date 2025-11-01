@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 5: Storage Devices</title>
+    <style>
+        .navigation {
+            margin-top: 40px;
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .navigation h2 {
+            color: #004085;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .navigation li {
+            display: inline-block;
+            background-color: #0056b3;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navigation li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navigation li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body style="font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333;">
+    <div style="max-width: 900px; margin: auto; background: #fff; padding: 20px 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+      <h1 style="text-align: center; color: #004085; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">Unit 5: Storage Devices</h1>
+
+
+
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Focus:</strong> This unit is highly important for understanding how data is stored and retrieved. Expect detailed questions on memory hierarchy, differences between various memory types (RAM vs. ROM, HDD vs. SSD), and the characteristics of primary and secondary storage.
+      </p>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.1 Introduction to Storage Devices</h2>
+      <p>
+        Storage devices are fundamental components of any computer system, responsible for permanently or temporarily holding data, programs, and processing results. They are essential for a computer to operate, retain information, and execute tasks. Without effective storage, a computer would lose all its data every time it's turned off.
+      </p>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.2 Memory Hierarchy</h2>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Explaining the memory hierarchy is a very common question. Understand the levels, their characteristics, and why this hierarchy exists.
+      </p>
+      <p>
+        The memory hierarchy in a computer system is a structured arrangement of storage devices, organized by speed, cost, and capacity. The goal is to provide the CPU with fast access to data while keeping the overall cost of memory low. Faster, more expensive, and smaller memory (like registers and cache) are closer to the CPU, while slower, cheaper, and larger memory (like secondary storage) are further away.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Registers:</strong> Smallest, fastest, most expensive. Located inside the CPU.</li>
+        <li><strong>Cache Memory:</strong> Small, very fast memory between CPU and main memory.</li>
+        <li><strong>Primary Memory (RAM):</strong> Main working memory, fast, volatile.</li>
+        <li><strong>Secondary Storage:</strong> Large capacity, non-volatile, slower.</li>
+      </ul>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.3 Registers</h2>
+      <p>
+        Registers are the smallest, fastest, and most expensive memory components in the computer system. They are tiny storage areas located directly inside the CPU.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Function:</strong> Temporarily hold instructions, memory addresses, and data being actively manipulated by the ALU and Control Unit during the CPU's fetch-decode-execute cycle. They are crucial for rapid instruction execution.</li>
+      </ul>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.4 Cache Memory</h2>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> The use and function of Cache Memory are often tested. Understand how it speeds up CPU access.
+      </p>
+      <p>
+        Cache Memory is an extremely fast, small memory buffer that sits between the CPU and Primary Memory (RAM). Its purpose is to speed up data access for the CPU.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Function:</strong> It stores copies of data and instructions that the CPU is likely to use next. When the CPU needs data, it first checks the cache. If found (cache hit), it's retrieved quickly. If not (cache miss), the CPU retrieves it from RAM and stores a copy in the cache for future use.</li>
+        <li><strong>Levels:</strong> Cache is typically divided into L1 (internal to CPU, fastest), L2 (external to CPU, fast), and sometimes L3 (shared among CPU cores).</li>
+      </ul>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.5 Primary Memory (Main Memory)</h2>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Differentiating between RAM and ROM, and primary vs. secondary memory, are frequent exam questions.
+      </p>
+      <p>
+        Primary Memory, also known as Main Memory, is the working memory of the computer. The CPU must have programs and data loaded into Primary Memory before it can process them.
+      </p>
+      <h3 style="color: #0056b3; margin-top: 15px;">Characteristics of Primary Memory:</h3>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Volatile:</strong> Data is lost when the power is turned off (e.g., RAM).</li>
+        <li><strong>Direct Access:</strong> The CPU can access any location quickly and directly.</li>
+        <li><strong>High Speed:</strong> Fast enough to keep up with the CPU's processing demands.</li>
+        <li><strong>Limited Capacity:</strong> Smaller storage capacity compared to secondary storage.</li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Types of Primary Memory:</h3>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>RAM (Random Access Memory):</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li>Volatile, read/write memory.</li>
+            <li>Holds the operating system, application programs, and data currently in use.</li>
+            <li><strong>DRAM (Dynamic RAM):</strong> Most common type, needs constant refreshing, slower, cheaper.</li>
+            <li><strong>SRAM (Static RAM):</strong> Faster, more expensive, used for cache memory, does not need refreshing.</li>
+          </ul>
+        </li>
+        <li><strong>ROM (Read-Only Memory):</strong>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li>Non-volatile, usually read-only.</li>
+            <li>Stores crucial firmware and instructions (like the BIOS) needed to start the computer.</li>
+            <li><strong>PROM (Programmable ROM):</strong> Blank chips that can be programmed once.</li>
+            <li><strong>EPROM (Erasable Programmable ROM):</strong> Can be erased using UV light and reprogrammed.</li>
+            <li><strong>EEPROM (Electrically Erasable Programmable ROM):</strong> Can be erased and rewritten electrically (used in modern flash BIOS chips).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Difference between RAM and ROM:</h3>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Feature</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">RAM</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">ROM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Volatility</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Volatile (data lost without power)</td>
+            <td style="border: 1px #ddd; padding: 8px; text-align: left;">Non-volatile (data retained without power)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Usage</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Working memory, temporary storage</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Stores start-up instructions (firmware)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Operation</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Read and Write</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Primarily Read</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Difference between DRAM and SRAM:</h3>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Feature</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">DRAM (Dynamic RAM)</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">SRAM (Static RAM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Speed</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Slower</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Faster (used for Cache memory)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Density</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">High (more memory in less space)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Low (less memory in more space)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Cost</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Less Expensive</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">More Expensive</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Refresh</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Requires constant electrical refresh</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Does not require constant refresh</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.6 Secondary Memory (Auxiliary Storage)</h2>
+      <p style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; font-weight: bold;">
+        <strong>Exam Question Alert:</strong> Expect questions on the characteristics and types of secondary memory, and detailed comparisons like HDD vs. SSD.
+      </p>
+      <p>
+        Secondary Memory, also known as Auxiliary Storage, provides a permanent, long-term storage solution for all programs and data. It is non-volatile, meaning data persists even when the computer is turned off.
+      </p>
+      <h3 style="color: #0056b3; margin-top: 15px;">Characteristics of Secondary Memory:</h3>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Non-Volatile:</strong> Data is permanent until intentionally erased.</li>
+        <li><strong>High Capacity:</strong> Designed to store vast amounts of data.</li>
+        <li><strong>Lower Speed:</strong> Much slower access time compared to Primary Memory.</li>
+        <li><strong>Economical:</strong> Lower cost per bit of storage than Primary Memory.</li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Types of Secondary Memory:</h3>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Magnetic Storage:</strong> Uses magnetized material to store data. Data is read/written by tiny electromagnets.
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Examples:</strong> Hard Disk Drives (HDD), Magnetic Tapes.</li>
+          </ul>
+        </li>
+        <li><strong>Optical Storage:</strong> Uses lasers to read and write data pits and lands on a reflective surface.
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Examples:</strong> CD-ROM, DVD-ROM, Blu-ray Discs.</li>
+          </ul>
+        </li>
+        <li><strong>Solid State Storage:</strong> Uses flash memory (EEPROM) technology, containing no moving parts.
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li><strong>Examples:</strong> Solid State Drives (SSD), USB Flash Drives, SD Cards.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Difference between Hard Disk Drive (HDD) and Solid State Drive (SSD):</h3>
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Feature</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Hard Disk Drive (HDD)</th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #0056b3; color: white;">Solid State Drive (SSD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Technology</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Magnetic spinning platters</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Flash memory chips</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Speed</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Slower (mechanical movement)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Much Faster (electronic access)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Durability</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Sensitive to shocks and movement</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Highly durable (no moving parts)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Noise</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Audible spinning noise</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Silent</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px;">Direct vs. Sequential Access Magnetic Memory:</h3>
+      <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><strong>Direct Access (Random Access):</strong> Allows the device to jump directly to any location on the storage medium to retrieve data. Access time is relatively independent of data location (e.g., HDDs, SSDs).</li>
+        <li><strong>Sequential Access:</strong> Data must be read or written in the order it was recorded. To access data in the middle, all preceding data must be read first (e.g., Magnetic Tapes).</li>
+      </ul>
+
+      <div style="margin-top: 40px; padding: 15px; background-color: #e9f7ef; border-left: 5px solid #28a745; font-style: italic; color: #28a745;">
+        <p><strong>Course Code:</strong> CMP 116</p>
+        <p><strong>Credit Hours:</strong> 3</p>
+        <p>This unit provides comprehensive knowledge about computer storage devices, memory hierarchy, and different types of memory.</p>
+      </div>
+
+      <div class="important-questions">
+        <h2>Important Questions</h2>
+        <ul>
+            <li>Explain Memory Hierarchy. Write about the different types of memory used in computer system. (7)</li>
+            <li>Define Permanent Storage. Differentiate between HDD and SSD in details with use cases. (8)</li>
+            <li>Define secondary memory along with its types. (7)</li>
+            <li>Define the use of Cache Memory. Explain about the any three types of primary memory with their uses in computer system. (8)</li>
+            <li>Explain how SSD is more efficient compared to other secondary storage media like hard disk. (7)</li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="unit1.html">Unit 1</a></li>
+            <li><a href="unit2.html">Unit 2</a></li>
+            <li><a href="unit3.html">Unit 3</a></li>
+            <li><a href="unit4.html">Unit 4</a></li>
+            <li><a href="unit6.html">Unit 6</a></li>
+            <li><a href="unit7.html">Unit 7</a></li>
+            <li><a href="unit8.html">Unit 8</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 7: Operating System</title>
+    <style>
+        .navigation {
+            margin-top: 40px;
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .navigation h2 {
+            color: #004085;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .navigation li {
+            display: inline-block;
+            background-color: #0056b3;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navigation li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navigation li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body
+    style="
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    "
+  >
+    <div
+      style="
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1
+        style="
+          text-align: center;
+          color: #004085;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        Unit 7: Operating System
+      </h1>
+
+
+
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Focus:</strong> This unit is fundamentally important!
+        Expect detailed questions on the functions and types of Operating
+        Systems, the difference between GUI and TUI/CUI, and the booting
+        process. Command-line questions are also common.
+      </p>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.1 Introduction to Operating System (OS)
+      </h2>
+      <p>
+        An Operating System (OS) is the most crucial piece of system software
+        that manages computer hardware and software resources and provides
+        common services for computer programs. It acts as an intermediary layer,
+        shielding the user from the hardware's complexity and enabling efficient
+        interaction with the machine.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Objectives of OS:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Convenience:</strong> Makes the computer system
+              user-friendly.
+            </li>
+            <li>
+              <strong>Efficiency:</strong> Ensures optimal utilization of
+              computer resources (CPU, Memory, I/O devices).
+            </li>
+            <li>
+              <strong>Resource Management:</strong> Allocates and de-allocates
+              hardware and software resources.
+            </li>
+            <li>
+              <strong>Hiding Complexity:</strong> Abstract away the complexities
+              of hardware interactions.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.2 History and Evolution (Generations) of OS
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Understanding the evolution and
+        generations of OS helps grasp their fundamental purposes. Questions
+        often touch upon how OS capabilities advanced over time.
+      </p>
+      <p>
+        The evolution of operating systems has closely tracked advancements in
+        computer hardware and user needs:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>First Generation (1940s-1950s - Vacuum Tubes):</strong> No
+          true OS. Programs were written in machine language and executed one at
+          a time via plug boards.
+        </li>
+        <li>
+          <strong>Second Generation (1950s-1960s - Transistors):</strong>
+          Introduction of rudimentary OS for batch processing. Jobs were
+          submitted in batches, with the OS primarily handling job sequencing.
+        </li>
+        <li>
+          <strong>Third Generation (1960s-1970s - Integrated Circuits):</strong>
+          Emergence of multiprogramming and time-sharing. OS could manage
+          multiple jobs concurrently and allow multiple users to share a single
+          computer (e.g., mainframe OS, early UNIX).
+        </li>
+        <li>
+          <strong>Fourth Generation (1970s-Present - Microprocessors):</strong>
+          Rise of personal computing (PCs) and distributed systems. Development
+          of user-friendly OS like MS-DOS, Windows, and Mac OS, along with
+          client-server and network OS.
+        </li>
+        <li>
+          <strong
+            >Fifth Generation (Present & Beyond - AI, Parallel
+            Processing):</strong
+          >
+          Focus on intelligent systems, mobile OS, cloud OS, and advanced
+          parallel processing capabilities.
+        </li>
+      </ul>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.3 Functions of OS
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Listing and explaining the major
+        functions of an OS is a very frequent and high-scoring question.
+      </p>
+      <p>
+        The OS performs several critical functions to manage the computer system
+        efficiently and provide services to applications and users:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Process Management:</strong> Manages the execution of all
+          processes (programs in execution). It handles process creation,
+          termination, scheduling (allocating CPU time), and synchronization.
+        </li>
+        <li>
+          <strong>Memory Management:</strong> Keeps track of primary memory,
+          allocates and de-allocates memory space to programs, and manages
+          swapping between RAM and secondary storage.
+        </li>
+        <li>
+          <strong>File Management:</strong> Organizes, stores, retrieves, and
+          protects files and directories. It handles file creation, deletion,
+          access control, and organization on storage devices.
+        </li>
+        <li>
+          <strong>Device Management:</strong> Manages all input/output (I/O)
+          devices, allocating them to processes and controlling their operation
+          through device drivers.
+        </li>
+        <li>
+          <strong>Security Management:</strong> Protects system resources and
+          user information from unauthorized access, using features like
+          passwords, access control lists, and firewalls.
+        </li>
+        <li>
+          <strong>Error Detection and Handling:</strong> Monitors the system for
+          errors (hardware or software) and takes appropriate corrective actions
+          to ensure system stability.
+        </li>
+        <li>
+          <strong>Command Interpretation:</strong> Provides an interface (GUI or
+          CUI) for users to interact with the hardware and applications.
+        </li>
+      </ul>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.4 Types of OS
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Be prepared to explain different
+        types of Operating Systems with examples.
+      </p>
+      <p>
+        Operating Systems are categorized based on their working methodology,
+        design principles, and the environment they are intended for:
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Type of OS
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Description
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Example
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Batch OS
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Executes jobs in batches without direct user interaction. Suitable
+              for tasks that don't require immediate output.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Older mainframe systems.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Time-Sharing OS
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Allows multiple users/tasks to share the computer simultaneously
+              by allocating short CPU time slices.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              UNIX, mainframe OSs.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Multitasking OS
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Allows a single user to run multiple programs concurrently on a
+              single CPU.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows, macOS, Linux desktops.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Distributed OS
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Manages a network of independent computers and makes them appear
+              as a single, cohesive system.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Network OSs, cloud computing environments.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Network OS (NOS)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Runs on a server and provides the capability to manage network
+              resources and services (e.g., security, file sharing).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows Server, Novell NetWare.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Real-Time OS (RTOS)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Designed for time-critical operations where tasks must be
+              completed within strict deadlines, often in embedded systems.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Used in industrial control, robotics, medical imaging systems.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Mobile OS
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Specifically designed for mobile devices like smartphones and
+              tablets.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Android, iOS.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.5 System Architecture of OS
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Expect questions asking you to
+        describe or draw the OS architecture and explain different architectural
+        types.
+      </p>
+      <p>
+        The system architecture of an Operating System describes how its core
+        components are structured internally. Common architectures include:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Monolithic Architecture:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              All OS services (process management, memory management, file
+              system, device drivers) run together in a single address space as
+              one large program (kernel).
+            </li>
+            <li>
+              <strong>Advantages:</strong> Fast communication between services,
+              high performance.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> Lack of modularity makes it
+              complex to develop and debug; a bug in one service can crash the
+              entire system.
+            </li>
+            <li>
+              <strong>Examples:</strong> Early UNIX kernels, MS-DOS, Linux.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Microkernel Architecture:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              Only essential OS services (process management, memory management,
+              inter-process communication) run in the kernel. Other services
+              (file systems, device drivers, network protocols) run as separate,
+              isolated processes in user space.
+            </li>
+            <li>
+              <strong>Advantages:</strong> More robust (failure in one service
+              doesn't crash the kernel), more modular, easier to extend and
+              port.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> Slower performance due to
+              increased inter-process communication overhead.
+            </li>
+            <li>
+              <strong>Examples:</strong> Mach, QNX, early versions of macOS.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Layered Architecture:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              The OS is broken into layers, where each layer provides services
+              to the layer above it and requests services from the layer below.
+            </li>
+            <li>
+              <strong>Advantages:</strong> Modular design, easier debugging and
+              maintenance.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> Can be less efficient due to
+              multiple layers of communication; defining layers can be complex.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.6 GUI vs. TUI/CUI
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Differentiating between Graphical
+        User Interface (GUI) and Text/Command User Interface (TUI/CUI) is a very
+        common question.
+      </p>
+      <p>
+        The user interface is how a user interacts with the operating system and
+        applications. The primary distinction is between graphical and
+        text-based interfaces.
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Feature
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              GUI (Graphical User Interface)
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              TUI/CUI (Text/Command User Interface)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Interaction
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Uses windows, icons, menus, and a pointer (mouse).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Uses text commands entered at a prompt.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Ease of Use
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              User-friendly, intuitive, easy for beginners.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Requires knowledge of specific commands, faster for experts.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Resources
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Requires significant processing power and memory.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Low resource requirements, efficient.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Examples
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows, macOS, modern Linux desktops.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              MS-DOS, Linux Bash terminal, Windows Command Prompt.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.7 The Booting System
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Understanding the booting process,
+        especially warm vs. cold booting, is a frequent exam topic.
+      </p>
+      <p>
+        Booting is the process of starting the computer operating system. It
+        initiates when power is turned on and concludes when the OS is ready for
+        user interaction.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Cold Booting:</strong> Starting the computer from a
+          powered-off state.
+        </li>
+        <li>
+          <strong>Warm Booting:</strong> Restarting the computer when it is
+          already powered on (e.g., using the restart option from the OS).
+          <ul>
+            <li>
+              <strong>Advantages of Warm Booting:</strong> Faster, less wear on
+              hardware.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Booting Process Steps:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Power On Self Test (POST):</strong> BIOS/UEFI performs
+              checks on hardware components.
+            </li>
+            <li>
+              <strong>Bootstrap Loader:</strong> BIOS/UEFI locates and loads the
+              boot loader from the storage device.
+            </li>
+            <li>
+              <strong>OS Kernel Loading:</strong> The boot loader loads the core
+              of the OS (kernel) into RAM.
+            </li>
+            <li>
+              <strong>Initialization:</strong> The kernel takes over,
+              initializes device drivers, starts system services, and launches
+              the user interface.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        7.8 Windows and Linux OS: Settings, Properties, and Commands
+      </h2>
+      <p>
+        Understanding how to manage and interact with popular operating systems
+        like Windows and Linux is practical and often tested through
+        command-line questions.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        General Settings and Properties:
+      </h3>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Windows OS:</strong> Managed through the Control Panel and the
+          Settings App. Users can configure hardware, network, user accounts,
+          system appearance, privacy, and updates.
+        </li>
+        <li>
+          <strong>Linux OS:</strong> Managed through GUI settings menus (like
+          KDE, GNOME) for desktop environments, but also extensively through
+          text-based configuration files and terminal commands for advanced
+          control.
+        </li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        Installation Guides (Conceptual Overview):
+      </h3>
+      <p>
+        Both Windows and Linux typically involve creating bootable media
+        (USB/DVD), booting from it, and following an installer wizard that
+        guides through partitioning, user setup, and software installation.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        Common OS Commands (Windows CMD/Linux Terminal):
+      </h3>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> You might be asked to provide the
+        function and/or syntax of common OS commands.
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Command
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Operating System
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Description / Function
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              CHKDSK / chkdsk
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Checks a logical disk for file system (and optionally bad sectors)
+              errors.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              TREE / tree
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Displays a graphical representation of the directory structure.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              ATTRIB
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Displays or changes file attributes (read-only, hidden, system,
+              archive).
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              REN / mv
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Renames a file or directory.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              COPYCON
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows (Legacy)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Used to create a text file directly from the command prompt.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              LABEL
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Creates, changes, or deletes the volume label of a disk.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              TYPE / cat
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Displays the contents of a text file.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              PING
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Tests the reachability of a host on an Internet Protocol (IP)
+              network.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              MKDIR / mkdir
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Creates a new directory.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              CLS / clear
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Clears the command prompt or terminal screen.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              CD / cd
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows / Linux
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Changes the current working directory.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              PATH
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Displays or sets the search path for executable files.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              SCANDISK
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows (Legacy)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              A diagnostic utility for checking and repairing file system errors
+              on disk drives.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              MOVE
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Windows
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Moves files and renames directories.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div
+        style="
+          margin-top: 40px;
+          padding: 15px;
+          background-color: #e9f7ef;
+          border-left: 5px solid #28a745;
+          font-style: italic;
+          color: #28a745;
+        "
+      >
+        <p><strong>Course Code:</strong> CMP 116</p>
+        <p><strong>Credit Hours:</strong> 3</p>
+        <p>
+          This unit provides comprehensive knowledge about Operating Systems,
+          their functions, types, and management.
+        </p>
+      </div>
+
+      <div class="important-questions">
+        <h2>Important Questions</h2>
+        <ul>
+            <li>Explain the roles of OS in the computer system. (7)</li>
+            <li>Explain different types of Operating System? Differentiate between Graphical User Interface (GUI) and Text User Interface (TUI). (8)</li>
+            <li>What is an operating system? Explain warm booting and cold booting. (8)</li>
+            <li>Define operating system. Explain different functions of operating System in details. (7)</li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="unit1.html">Unit 1</a></li>
+            <li><a href="unit2.html">Unit 2</a></li>
+            <li><a href="unit3.html">Unit 3</a></li>
+            <li><a href="unit4.html">Unit 4</a></li>
+            <li><a href="unit5.html">Unit 5</a></li>
+            <li><a href="unit6.html">Unit 6</a></li>
+            <li><a href="unit8.html">Unit 8</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
