@@ -122,38 +122,63 @@
       </p>
       <p>
         The evolution of operating systems has closely tracked advancements in
-        computer hardware and user needs:
+        computer hardware and user needs, leading to increasingly sophisticated
+        and user-friendly systems. Each generation brought significant changes
+        in how users interacted with computers and how resources were managed.
       </p>
       <ul style="list-style-type: disc; margin-left: 20px">
         <li>
-          <strong>First Generation (1940s-1950s - Vacuum Tubes):</strong> No
-          true OS. Programs were written in machine language and executed one at
-          a time via plug boards.
+          <strong>First Generation (1940s-1950s - Vacuum Tubes):</strong>
+          During this era, there was no true operating system as we know it today.
+          Computers were massive machines, and programs were written in machine
+          language (binary code) directly by programmers. Execution was a manual
+          process, often involving plug boards and switches, with only one program
+          running at a time. The primary focus was on performing complex
+          calculations for scientific and military purposes.
         </li>
         <li>
           <strong>Second Generation (1950s-1960s - Transistors):</strong>
-          Introduction of rudimentary OS for batch processing. Jobs were
-          submitted in batches, with the OS primarily handling job sequencing.
+          The introduction of transistors led to smaller, faster, and more reliable
+          computers. This period saw the emergence of rudimentary operating systems
+          primarily for batch processing. Programmers would submit "jobs" (programs
+          and data) on punched cards or magnetic tape, and the OS would execute
+          them in batches without direct user interaction. The OS's main role was
+          to handle job sequencing and basic I/O operations, improving efficiency
+          over manual execution.
         </li>
         <li>
           <strong>Third Generation (1960s-1970s - Integrated Circuits):</strong>
-          Emergence of multiprogramming and time-sharing. OS could manage
-          multiple jobs concurrently and allow multiple users to share a single
-          computer (e.g., mainframe OS, early UNIX).
+          Integrated Circuits (ICs) brought further miniaturization and increased
+          processing power. This generation marked the emergence of multiprogramming
+          and time-sharing operating systems. Multiprogramming allowed the CPU to
+          execute multiple jobs concurrently by switching between them when one job
+          was waiting for I/O. Time-sharing enabled multiple users to share a single
+          computer simultaneously, with the OS rapidly switching between users,
+          giving each the illusion of having dedicated access. Examples include
+          mainframe OS and early versions of UNIX.
         </li>
         <li>
           <strong>Fourth Generation (1970s-Present - Microprocessors):</strong>
-          Rise of personal computing (PCs) and distributed systems. Development
-          of user-friendly OS like MS-DOS, Windows, and Mac OS, along with
-          client-server and network OS.
+          The invention of the microprocessor led to the development of personal
+          computers (PCs), making computing accessible to individuals. This era saw
+          the rise of user-friendly operating systems like MS-DOS, Windows, and
+          Mac OS, which featured graphical user interfaces (GUIs). Distributed
+          systems, client-server architectures, and network operating systems also
+          became prominent, allowing computers to connect and share resources across
+          networks.
         </li>
         <li>
           <strong
             >Fifth Generation (Present & Beyond - AI, Parallel
             Processing):</strong
           >
-          Focus on intelligent systems, mobile OS, cloud OS, and advanced
-          parallel processing capabilities.
+          This ongoing generation focuses on advanced computing paradigms. Operating
+          systems are evolving to support intelligent systems (Artificial
+          Intelligence), massive parallel processing, and distributed computing
+          environments like cloud computing. Mobile operating systems (Android, iOS)
+          have become dominant, and research continues into areas like quantum OS
+          and advanced resource management for highly complex, interconnected
+          systems.
         </li>
       </ul>
 
@@ -181,43 +206,141 @@
         functions of an OS is a very frequent and high-scoring question.
       </p>
       <p>
-        The OS performs several critical functions to manage the computer system
-        efficiently and provide services to applications and users:
+        The Operating System (OS) serves as the central coordinator and manager
+        of all computer hardware and software resources. It performs several
+        critical functions to ensure the efficient, reliable, and secure
+        operation of the computer system, while also providing a user-friendly
+        environment for applications and users.
       </p>
       <ul style="list-style-type: disc; margin-left: 20px">
         <li>
-          <strong>Process Management:</strong> Manages the execution of all
-          processes (programs in execution). It handles process creation,
-          termination, scheduling (allocating CPU time), and synchronization.
+          <strong>Process Management:</strong> The OS is responsible for managing
+          the execution of all processes (programs in execution). This involves:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Process Creation and Termination:</strong> Creating new
+              processes and ending existing ones.
+            </li>
+            <li>
+              <strong>Scheduling:</strong> Allocating CPU time to different
+              processes to ensure fair and efficient use of the processor.
+            </li>
+            <li>
+              <strong>Synchronization:</strong> Coordinating the execution of
+              multiple processes to prevent conflicts and ensure data integrity.
+            </li>
+            <li>
+              <strong>Deadlock Handling:</strong> Detecting and resolving
+              situations where processes are stuck waiting for each other.
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Memory Management:</strong> Keeps track of primary memory,
-          allocates and de-allocates memory space to programs, and manages
-          swapping between RAM and secondary storage.
+          <strong>Memory Management:</strong> The OS efficiently manages the
+          computer's primary memory (RAM). Key tasks include:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Allocation and De-allocation:</strong> Assigning memory
+              space to programs when they need it and reclaiming it when they
+              are finished.
+            </li>
+            <li>
+              <strong>Memory Protection:</strong> Ensuring that one program
+              cannot interfere with the memory space of another.
+            </li>
+            <li>
+              <strong>Virtual Memory:</strong> Using secondary storage to
+              simulate larger primary memory, allowing programs to run even if
+              they are larger than physical RAM.
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>File Management:</strong> Organizes, stores, retrieves, and
-          protects files and directories. It handles file creation, deletion,
-          access control, and organization on storage devices.
+          <strong>File Management:</strong> The OS organizes, stores, retrieves,
+          and protects files and directories on storage devices. This includes:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>File Creation, Deletion, and Manipulation:</strong>
+              Providing tools for users and applications to create, delete, copy,
+              move, and modify files.
+            </li>
+            <li>
+              <strong>Directory Management:</strong> Organizing files into a
+              hierarchical directory structure for easy navigation and access.
+            </li>
+            <li>
+              <strong>Access Control:</strong> Implementing permissions to
+              control who can access, read, write, or execute specific files.
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Device Management:</strong> Manages all input/output (I/O)
-          devices, allocating them to processes and controlling their operation
-          through device drivers.
+          <strong>Device Management:</strong> The OS manages all input/output
+          (I/O) devices connected to the computer (e.g., keyboard, mouse,
+          printer, scanner, hard drive). It does this by:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Device Drivers:</strong> Using specialized software
+              (device drivers) to communicate with and control hardware devices.
+            </li>
+            <li>
+              <strong>Allocation:</strong> Allocating devices to processes and
+              managing their usage.
+            </li>
+            <li>
+              <strong>Buffering and Spooling:</strong> Handling data transfer
+              between devices and memory efficiently.
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Security Management:</strong> Protects system resources and
-          user information from unauthorized access, using features like
-          passwords, access control lists, and firewalls.
+          <strong>Security Management:</strong> Protecting system resources and
+          user information from unauthorized access and malicious activities.
+          This involves:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Authentication:</strong> Verifying user identity (e.g.,
+              passwords, biometrics).
+            </li>
+            <li>
+              <strong>Authorization:</strong> Granting specific permissions to
+              users or processes based on their identity.
+            </li>
+            <li>
+              <strong>Firewalls and Intrusion Detection:</strong> Protecting
+              the system from external threats.
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Error Detection and Handling:</strong> Monitors the system for
-          errors (hardware or software) and takes appropriate corrective actions
-          to ensure system stability.
+          <strong>Error Detection and Handling:</strong> The OS continuously
+          monitors the system for errors, both hardware (e.g., memory errors,
+          device failures) and software (e.g., application crashes). It takes
+          appropriate corrective actions, such as displaying error messages,
+          logging errors, or attempting to recover from failures, to ensure
+          system stability and data integrity.
         </li>
         <li>
-          <strong>Command Interpretation:</strong> Provides an interface (GUI or
-          CUI) for users to interact with the hardware and applications.
+          <strong>Command Interpretation (User Interface):</strong> The OS
+          provides an interface that allows users to interact with the computer
+          hardware and applications. This can be:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Graphical User Interface (GUI):</strong> A visual
+              interface using windows, icons, menus, and a pointer (mouse).
+            </li>
+            <li>
+              <strong>Command Line Interface (CLI) / Text User Interface
+              (TUI):</strong> A text-based interface where users type commands
+              to interact with the system.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Networking:</strong> Modern operating systems include
+          networking capabilities, allowing computers to connect to other
+          computers and share resources over a network. This involves managing
+          network connections, protocols (like TCP/IP), and network devices.
         </li>
       </ul>
 
@@ -246,7 +369,9 @@
       </p>
       <p>
         Operating Systems are categorized based on their working methodology,
-        design principles, and the environment they are intended for:
+        design principles, and the environment they are intended for. Each type
+        is optimized for specific use cases, from single-user tasks to managing
+        complex industrial systems or vast distributed networks.
       </p>
       <table
         border="1"
@@ -285,94 +410,86 @@
                 color: white;
               "
             >
-              Example
+              Characteristics & Examples
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Batch OS
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Executes jobs in batches without direct user interaction. Suitable
-              for tasks that don't require immediate output.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Older mainframe systems.
-            </td>
+            <td style="
+                border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Batch OS</strong></td>
+            <td style="
+                border: 1px solid #ddd; padding: 8px; text-align: left">Executes jobs in batches without direct user interaction. Tasks with
+              similar requirements are grouped together and run sequentially.</td>
+            <td style="
+                border: 1px solid #ddd; padding: 8px; text-align: left">Minimizes idle time of CPU. Suitable for large, repetitive tasks like
+              payroll processing. Older mainframe systems.</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Time-Sharing OS
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Allows multiple users/tasks to share the computer simultaneously
-              by allocating short CPU time slices.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              UNIX, mainframe OSs.
-            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Time-Sharing OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Allows multiple users/tasks to share the computer simultaneously
+              by allocating short CPU time slices to each.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Provides an interactive environment for multiple users, giving
+              each the illusion of having a dedicated system. UNIX, mainframe OSs.</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Multitasking OS
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Allows a single user to run multiple programs concurrently on a
-              single CPU.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows, macOS, Linux desktops.
-            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Multitasking OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Allows a single user to run multiple programs concurrently on a
+              single CPU by rapidly switching between processes.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Enhances user productivity by enabling simultaneous operation of
+              various applications (e.g., browsing the web while editing a
+              document). Windows, macOS, Linux desktops.</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Distributed OS
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Manages a network of independent computers and makes them appear
-              as a single, cohesive system.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Network OSs, cloud computing environments.
-            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Multiprocessing OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Manages multiple CPUs (processors) or CPU cores within a single
+              computer system to execute multiple processes simultaneously.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Increases processing power and throughput. Used in servers and
+              high-performance computing. Modern Windows, macOS, Linux.</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Network OS (NOS)
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Runs on a server and provides the capability to manage network
-              resources and services (e.g., security, file sharing).
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows Server, Novell NetWare.
-            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Distributed OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Manages a network of independent computers and makes them appear
+              as a single, cohesive system to the user.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Enhances resource sharing, fault tolerance, and scalability. Used
+              in network OSs, cloud computing environments, and clusters.</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Real-Time OS (RTOS)
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Designed for time-critical operations where tasks must be
-              completed within strict deadlines, often in embedded systems.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Used in industrial control, robotics, medical imaging systems.
-            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Network OS (NOS)</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Runs on a server and provides the capability to manage network
+              resources and services (e.g., security, file sharing, printer
+              access) for connected clients.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Facilitates communication and resource sharing in a client-server
+              environment. Windows Server, Ubuntu Server, Novell NetWare.</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Mobile OS
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Specifically designed for mobile devices like smartphones and
-              tablets.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Android, iOS.
-            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Real-Time OS (RTOS)</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Designed for time-critical operations where tasks must be
+              completed within strict deadlines, with minimal delay (guaranteed
+              response times).</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Used in embedded systems, industrial control, robotics, medical
+              imaging systems, and aerospace systems where precision timing is
+              critical. VxWorks, FreeRTOS.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Mobile OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Specifically designed for mobile devices like smartphones and
+              tablets, focusing on touch interfaces, power management, and
+              connectivity.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Optimized for smaller screens, limited battery life, and often
+              cloud integration. Android, iOS (Apple's mobile OS).</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Embedded OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Specialized operating systems designed to perform a dedicated
+              function in a larger mechanical or electronic system.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Found in appliances, ATMs, traffic lights, smart devices. Often
+              have limited resources and strict real-time requirements.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left"><strong>Multiprogramming OS</strong></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Allows multiple programs to reside in main memory simultaneously, with the CPU switching between them when one waits for I/O.</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">Maximizes CPU utilization by ensuring there's always a process to execute. Found in various modern OS implementations.</td>
           </tr>
         </tbody>
       </table>
@@ -403,25 +520,32 @@
       </p>
       <p>
         The system architecture of an Operating System describes how its core
-        components are structured internally. Common architectures include:
+        components are structured internally and how they interact with each
+        other and with the hardware. Different architectural designs offer
+        various trade-offs in terms of performance, security, modularity, and
+        ease of development.
       </p>
       <ul style="list-style-type: disc; margin-left: 20px">
         <li>
           <strong>Monolithic Architecture:</strong>
           <ul style="list-style-type: circle; margin-left: 20px">
             <li>
-              All OS services (process management, memory management, file
-              system, device drivers) run together in a single address space as
-              one large program (kernel).
+              <strong>Description:</strong> In a monolithic architecture, all
+              OS services (process management, memory management, file system,
+              device drivers, networking, etc.) run together in a single address
+              space as one large program, known as the kernel. All components
+              are tightly coupled and communicate directly.
             </li>
             <li>
-              <strong>Advantages:</strong> Fast communication between services,
-              high performance.
+              <strong>Advantages:</strong> Fast communication between services
+              due to direct function calls, leading to high performance and
+              efficiency. Simpler design for basic functionalities.
             </li>
             <li>
               <strong>Disadvantages:</strong> Lack of modularity makes it
-              complex to develop and debug; a bug in one service can crash the
-              entire system.
+              complex to develop, debug, and maintain. A bug in one service can
+              crash the entire system. Difficult to extend or modify without
+              recompiling the entire kernel.
             </li>
             <li>
               <strong>Examples:</strong> Early UNIX kernels, MS-DOS, Linux.
@@ -432,22 +556,28 @@
           <strong>Microkernel Architecture:</strong>
           <ul style="list-style-type: circle; margin-left: 20px">
             <li>
-              Only essential OS services (process management, memory management,
-              inter-process communication) run in the kernel. Other services
-              (file systems, device drivers, network protocols) run as separate,
-              isolated processes in user space.
+              <strong>Description:</strong> A microkernel architecture keeps
+              only the absolutely essential OS services (like inter-process
+              communication, memory management, and basic process scheduling)
+              within the kernel. Other services (such as file systems, device
+              drivers, and network protocols) run as separate, isolated processes
+              in user space. These services communicate with each other and the
+              kernel via message passing.
             </li>
             <li>
-              <strong>Advantages:</strong> More robust (failure in one service
-              doesn't crash the kernel), more modular, easier to extend and
-              port.
+              <strong>Advantages:</strong> More robust and reliable (a failure
+              in a user-space service doesn't crash the entire kernel). More
+              modular, easier to extend, port to new hardware, and debug. Enhanced
+              security due to isolation of services.
             </li>
             <li>
-              <strong>Disadvantages:</strong> Slower performance due to
-              increased inter-process communication overhead.
+              <strong>Disadvantages:</strong> Slower performance due to increased
+              inter-process communication (IPC) overhead (message passing is
+              slower than direct function calls). More complex to design and
+              implement initially.
             </li>
             <li>
-              <strong>Examples:</strong> Mach, QNX, early versions of macOS.
+              <strong>Examples:</strong> Mach (used in early macOS), QNX, MINIX.
             </li>
           </ul>
         </li>
@@ -455,16 +585,50 @@
           <strong>Layered Architecture:</strong>
           <ul style="list-style-type: circle; margin-left: 20px">
             <li>
-              The OS is broken into layers, where each layer provides services
-              to the layer above it and requests services from the layer below.
+              <strong>Description:</strong> The OS is broken down into several
+              layers, where each layer provides services to the layer directly
+              above it and requests services from the layer directly below it.
+              The lowest layer interacts with the hardware, and the highest layer
+              interacts with the user.
             </li>
             <li>
-              <strong>Advantages:</strong> Modular design, easier debugging and
-              maintenance.
+              <strong>Advantages:</strong> Modular design, making it easier to
+              develop, debug, and maintain. Changes in one layer typically only
+              affect adjacent layers.
             </li>
             <li>
               <strong>Disadvantages:</strong> Can be less efficient due to
-              multiple layers of communication; defining layers can be complex.
+              multiple layers of communication (a request might have to pass
+              through several layers). Defining the layers and their
+              functionalities can be complex.
+            </li>
+            <li>
+              <strong>Examples:</strong> THE operating system, Multics.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Hybrid Kernel Architecture:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> A hybrid kernel attempts to combine
+              the benefits of both monolithic and microkernel architectures. It
+              runs some services (like device drivers and file systems) in kernel
+              space for performance, while others (like networking) might run in
+              user space for modularity and stability.
+            </li>
+            <li>
+              <strong>Advantages:</strong> Offers a balance between performance
+              and modularity/security. Can be optimized for specific needs.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> Can still be complex to design and
+              manage the interaction between kernel-space and user-space
+              components.
+            </li>
+            <li>
+              <strong>Examples:</strong> Windows NT (and subsequent Windows
+              versions), macOS (modern versions), some Linux distributions.
             </li>
           </ul>
         </li>
@@ -495,9 +659,12 @@
         common question.
       </p>
       <p>
-        The user interface is how a user interacts with the operating system and
-        applications. The primary distinction is between graphical and
-        text-based interfaces.
+        The user interface (UI) is the means by which a user interacts with a
+        computer system or software application. The primary distinction in
+        operating systems is between graphical interfaces, which are visually
+        driven, and text-based interfaces, which rely on typed commands. Each
+        has its own strengths and weaknesses, making them suitable for different
+        users and tasks.
       </p>
       <table
         border="1"
@@ -543,46 +710,80 @@
         <tbody>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Interaction
+              <strong>Interaction Method</strong>
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Uses windows, icons, menus, and a pointer (mouse).
+              Users interact with visual elements like windows, icons, menus,
+              buttons, and scrollbars using a pointing device (mouse, trackpad)
+              and keyboard.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Uses text commands entered at a prompt.
-            </td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Ease of Use
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              User-friendly, intuitive, easy for beginners.
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Requires knowledge of specific commands, faster for experts.
+              Users interact by typing text commands at a command prompt. The
+              system responds with text output.
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Resources
+              <strong>Ease of Use</strong>
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Requires significant processing power and memory.
+              Highly user-friendly, intuitive, and easy for beginners to learn
+              and navigate due to visual cues and direct manipulation.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Low resource requirements, efficient.
+              Requires knowledge of specific commands and syntax, making it less
+              intuitive for beginners but very powerful and efficient for experts.
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Examples
+              <strong>Resource Requirements</strong>
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows, macOS, modern Linux desktops.
+              Requires significant processing power, memory, and graphics
+              capabilities to render visual elements.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              MS-DOS, Linux Bash terminal, Windows Command Prompt.
+              Has low resource requirements, making it efficient for systems
+              with limited hardware or for remote administration.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Speed & Efficiency</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Can be slower for repetitive tasks due to reliance on mouse clicks
+              and visual navigation.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Faster for experienced users performing repetitive tasks or complex
+              operations through scripting and command chaining.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Flexibility & Control</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Offers good control for general tasks but can be limited for very
+              specific or advanced system configurations.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Provides precise and powerful control over the system, allowing
+              for complex operations and automation through scripts.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Examples</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Microsoft Windows, Apple macOS, modern Linux desktop environments
+              (GNOME, KDE).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              MS-DOS, Linux Bash terminal, Windows Command Prompt, PowerShell.
             </td>
           </tr>
         </tbody>
@@ -612,44 +813,96 @@
         especially warm vs. cold booting, is a frequent exam topic.
       </p>
       <p>
-        Booting is the process of starting the computer operating system. It
-        initiates when power is turned on and concludes when the OS is ready for
-        user interaction.
+        Booting is the fundamental process of starting a computer and loading
+        its operating system into memory. It is a sequence of operations that
+        initiates when power is turned on and concludes when the OS is fully
+        loaded and ready for user interaction. This process ensures that all
+        necessary hardware components are initialized and the software environment
+        is prepared for execution.
       </p>
       <ul style="list-style-type: disc; margin-left: 20px">
         <li>
-          <strong>Cold Booting:</strong> Starting the computer from a
-          powered-off state.
-        </li>
-        <li>
-          <strong>Warm Booting:</strong> Restarting the computer when it is
-          already powered on (e.g., using the restart option from the OS).
-          <ul>
+          <strong>Cold Booting (Hard Boot):</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
             <li>
-              <strong>Advantages of Warm Booting:</strong> Faster, less wear on
-              hardware.
+              <strong>Description:</strong> Starting the computer from a
+              completely powered-off state. This involves applying power to all
+              components, which then undergo a full initialization and self-test
+              sequence.
+            </li>
+            <li>
+              <strong>Process:</strong> All hardware components are reset, and
+              the BIOS/UEFI performs a comprehensive Power-On Self-Test (POST).
+              This ensures that all hardware is functioning correctly before the
+              OS begins to load.
+            </li>
+            <li>
+              <strong>When Used:</strong> Typically performed when first turning
+              on a computer, after a complete shutdown, or when resolving system
+              crashes that prevent a warm boot.
             </li>
           </ul>
         </li>
         <li>
-          <strong>Booting Process Steps:</strong>
+          <strong>Warm Booting (Soft Boot / Restart):</strong>
           <ul style="list-style-type: circle; margin-left: 20px">
             <li>
-              <strong>Power On Self Test (POST):</strong> BIOS/UEFI performs
-              checks on hardware components.
+              <strong>Description:</strong> Restarting the computer when it is
+              already powered on, usually initiated from within the operating
+              system (e.g., using the "Restart" option).
             </li>
             <li>
-              <strong>Bootstrap Loader:</strong> BIOS/UEFI locates and loads the
-              boot loader from the storage device.
+              <strong>Process:</strong> The OS performs a controlled shutdown,
+              and then the system restarts without completely cutting power to
+              all components. The BIOS/UEFI performs a less extensive POST,
+              skipping some hardware checks, which makes the process faster.
             </li>
             <li>
-              <strong>OS Kernel Loading:</strong> The boot loader loads the core
-              of the OS (kernel) into RAM.
+              <strong>Advantages:</strong> Faster than a cold boot, as it skips
+              some initial hardware checks. Less wear and tear on hardware
+              components compared to a full power cycle.
             </li>
             <li>
-              <strong>Initialization:</strong> The kernel takes over,
-              initializes device drivers, starts system services, and launches
-              the user interface.
+              <strong>When Used:</strong> Commonly used after installing software
+              updates, troubleshooting minor software issues, or when the system
+              becomes unresponsive but not completely frozen.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Booting Process Steps (General Overview):</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>1. Power On Self Test (POST):</strong> When the computer
+              is powered on (cold boot) or restarted (warm boot), the BIOS/UEFI
+              (Basic Input/Output System / Unified Extensible Firmware Interface)
+              firmware performs a series of diagnostic tests to ensure that
+              essential hardware components (CPU, RAM, graphics card, keyboard,
+              etc.) are present and functioning correctly. Any critical errors
+              are usually indicated by beep codes or on-screen messages.
+            </li>
+            <li>
+              <strong>2. Bootstrap Loader:</strong> After a successful POST, the
+              BIOS/UEFI locates the boot device (e.g., hard drive, SSD, USB
+              drive) as configured in the system settings. It then reads the
+              first sector of the boot device, which contains a small program
+              called the bootstrap loader (or boot loader). This loader's job is
+              to find and load the operating system.
+            </li>
+            <li>
+              <strong>3. OS Kernel Loading:</strong> The bootstrap loader then
+              loads the core of the operating system, known as the kernel, into
+              the computer's Random Access Memory (RAM). The kernel is the heart
+              of the OS, responsible for managing system resources and providing
+              essential services.
+            </li>
+            <li>
+              <strong>4. Initialization:</strong> Once the kernel is loaded, it
+              takes over control of the computer. It initializes device drivers
+              for all connected hardware, starts essential system services and
+              background processes, sets up memory management, and finally
+              launches the user interface (GUI or CLI), making the system ready
+              for user interaction.
             </li>
           </ul>
         </li>
@@ -713,6 +966,14 @@
         <strong>Exam Question Alert:</strong> You might be asked to provide the
         function and/or syntax of common OS commands.
       </p>
+      <p>
+        Command-line interfaces (CLI) provide a powerful way to interact with
+        operating systems directly by typing commands. While GUIs are popular
+        for their ease of use, CLIs offer greater precision, automation
+        capabilities (through scripting), and efficiency for experienced users
+        and system administrators. Below are some common commands for Windows
+        Command Prompt (CMD) and Linux Terminal.
+      </p>
       <table
         border="1"
         style="width: 100%; border-collapse: collapse; margin: 20px 0"
@@ -728,18 +989,7 @@
                 color: white;
               "
             >
-              Command
-            </th>
-            <th
-              style="
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-                background-color: #0056b3;
-                color: white;
-              "
-            >
-              Operating System
+              Command (Windows / Linux)
             </th>
             <th
               style="
@@ -752,165 +1002,268 @@
             >
               Description / Function
             </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Example Syntax
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              CHKDSK / chkdsk
+              <strong>CHKDSK</strong> (Windows)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows
+              Checks a logical disk for file system errors and can optionally
+              scan for and recover bad sectors.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Checks a logical disk for file system (and optionally bad sectors)
-              errors.
-            </td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              TREE / tree
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Displays a graphical representation of the directory structure.
+              <code>CHKDSK C: /F /R</code> (Checks drive C:, fixes errors,
+              recovers bad sectors)
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              ATTRIB
+              <strong>chkdsk</strong> (Linux - equivalent)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows
+              While <code>chkdsk</code> is Windows-specific, Linux uses tools
+              like <code>fsck</code> (file system check) for similar purposes.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>sudo fsck /dev/sda1</code> (Checks the specified partition)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>TREE</strong> (Windows) / <strong>tree</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Displays a graphical representation of the directory structure
+              (folder and file hierarchy).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>TREE /F</code> (Windows - displays files) <br />
+              <code>tree -L 2</code> (Linux - displays 2 levels deep)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>ATTRIB</strong> (Windows)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
               Displays or changes file attributes (read-only, hidden, system,
-              archive).
+              archive) for files and directories.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>ATTRIB +H "myfile.txt"</code> (Hides myfile.txt)
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              REN / mv
+              <strong>REN</strong> (Windows) / <strong>mv</strong> (Linux)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
+              Renames a file or directory. <code>mv</code> in Linux can also
+              move files.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Renames a file or directory.
-            </td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              COPYCON
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows (Legacy)
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Used to create a text file directly from the command prompt.
+              <code>REN oldname.txt newname.txt</code> (Windows) <br />
+              <code>mv oldname.txt newname.txt</code> (Linux)
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              LABEL
+              <strong>COPYCON</strong> (Windows - Legacy)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows
+              A legacy command used to create a text file directly from the
+              command prompt. User types content and presses Ctrl+Z then Enter
+              to save.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Creates, changes, or deletes the volume label of a disk.
-            </td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              TYPE / cat
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Displays the contents of a text file.
+              <code>COPYCON newfile.txt</code>
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              PING
+              <strong>LABEL</strong> (Windows)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
+              Creates, changes, or deletes the volume label (name) of a disk
+              drive.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>LABEL C: MyDrive</code> (Sets label of C: to MyDrive)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>TYPE</strong> (Windows) / <strong>cat</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Displays the contents of a text file directly in the command
+              prompt/terminal.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>TYPE document.txt</code> (Windows) <br />
+              <code>cat document.txt</code> (Linux)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>PING</strong> (Windows / Linux)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
               Tests the reachability of a host on an Internet Protocol (IP)
-              network.
+              network and measures the round-trip time for messages.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>PING google.com</code>
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              MKDIR / mkdir
+              <strong>MKDIR</strong> (Windows) / <strong>mkdir</strong> (Linux)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
+              Creates a new directory (folder).
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Creates a new directory.
-            </td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              CLS / clear
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Clears the command prompt or terminal screen.
+              <code>MKDIR NewFolder</code> (Windows) <br />
+              <code>mkdir new_folder</code> (Linux)
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              CD / cd
+              <strong>CLS</strong> (Windows) / <strong>clear</strong> (Linux)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows / Linux
+              Clears the command prompt or terminal screen, removing previous
+              commands and output.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>CLS</code> (Windows) <br />
+              <code>clear</code> (Linux)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>CD</strong> (Windows) / <strong>cd</strong> (Linux)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
               Changes the current working directory.
             </td>
-          </tr>
-          <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              PATH
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows
-            </td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Displays or sets the search path for executable files.
+              <code>CD C:\Users\Admin</code> (Windows) <br />
+              <code>cd /home/user/documents</code> (Linux)
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              SCANDISK
+              <strong>PATH</strong> (Windows)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows (Legacy)
+              Displays or sets the search path for executable files. When a
+              command is entered, the OS searches these directories for the
+              executable.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>PATH</code> (Displays current path) <br />
+              <code>PATH %PATH%;C:\MyTools</code> (Adds a directory to path)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>SCANDISK</strong> (Windows - Legacy)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
               A diagnostic utility for checking and repairing file system errors
-              on disk drives.
+              on disk drives. Replaced by CHKDSK in modern Windows versions.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>SCANDISK C:</code>
             </td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              MOVE
+              <strong>MOVE</strong> (Windows) / <strong>mv</strong> (Linux)
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Windows
+              Moves files and renames directories. In Linux, <code>mv</code>
+              also renames.
             </td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
-              Moves files and renames directories.
+              <code>MOVE file.txt C:\NewFolder</code> (Windows) <br />
+              <code>mv file.txt /home/user/new_folder</code> (Linux)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>DIR</strong> (Windows) / <strong>ls</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Lists the contents of a directory (files and subdirectories).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>DIR /P</code> (Windows - pauses after each screenful) <br />
+              <code>ls -l</code> (Linux - long listing format)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>COPY</strong> (Windows) / <strong>cp</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Copies one or more files from one location to another.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>COPY file.txt C:\Backup</code> (Windows) <br />
+              <code>cp file.txt /home/user/backup</code> (Linux)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>DEL</strong> (Windows) / <strong>rm</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Deletes one or more files.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>DEL oldfile.txt</code> (Windows) <br />
+              <code>rm oldfile.txt</code> (Linux)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>RMDIR</strong> (Windows) / <strong>rmdir</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Removes an empty directory.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>RMDIR EmptyFolder</code> (Windows) <br />
+              <code>rmdir empty_folder</code> (Linux)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>HELP</strong> (Windows) / <strong>man</strong> (Linux)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Provides help information for commands. <code>man</code> in Linux
+              provides a manual page.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <code>HELP DIR</code> (Windows) <br />
+              <code>man ls</code> (Linux)
             </td>
           </tr>
         </tbody>
