@@ -26,13 +26,27 @@
         <strong>Exam Question Alert:</strong> Explaining the memory hierarchy is a very common question. Understand the levels, their characteristics, and why this hierarchy exists.
       </p>
       <p>
-        The memory hierarchy in a computer system is a structured arrangement of storage devices, organized by speed, cost, and capacity. The goal is to provide the CPU with fast access to data while keeping the overall cost of memory low. Faster, more expensive, and smaller memory (like registers and cache) are closer to the CPU, while slower, cheaper, and larger memory (like secondary storage) are further away.
+        The memory hierarchy in a computer system is a structured arrangement of storage devices, organized in a pyramid-like fashion based on three key characteristics: speed, cost per bit, and capacity. The fundamental goal of this hierarchy is to provide the Central Processing Unit (CPU) with the fastest possible access to data while keeping the overall cost of the memory system manageable. This is achieved by using a combination of different memory technologies, where faster, more expensive, and smaller memory components are placed closer to the CPU, and slower, cheaper, and larger memory components are placed further away.
+      </p>
+      <p>
+        The principle behind the memory hierarchy is locality of reference, which states that during any phase of program execution, the information accessed by the CPU tends to be concentrated in a relatively small portion of the total available memory. By keeping frequently accessed data in faster, closer memory levels, the average memory access time is significantly reduced, thereby improving the overall performance of the computer system.
       </p>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>Registers:</strong> Smallest, fastest, most expensive. Located inside the CPU.</li>
-        <li><strong>Cache Memory:</strong> Small, very fast memory between CPU and main memory.</li>
-        <li><strong>Primary Memory (RAM):</strong> Main working memory, fast, volatile.</li>
-        <li><strong>Secondary Storage:</strong> Large capacity, non-volatile, slower.</li>
+        <li>
+          <strong>Registers:</strong> These are the smallest, fastest, and most expensive memory components. They are located directly inside the CPU and are used to temporarily hold data, instructions, and memory addresses that the CPU is actively processing. Access to registers is almost instantaneous.
+        </li>
+        <li>
+          <strong>Cache Memory:</strong> A small, very fast memory buffer that sits between the CPU and main memory (RAM). It stores copies of data and instructions that the CPU is likely to use next, significantly speeding up data access by reducing the need to access slower main memory. Cache is typically organized into multiple levels (L1, L2, L3).
+        </li>
+        <li>
+          <strong>Primary Memory (RAM):</strong> Also known as Main Memory, this is the computer's working memory. It is fast, volatile (data is lost when power is off), and directly accessible by the CPU. It holds the operating system, application programs, and data currently in use.
+        </li>
+        <li>
+          <strong>Secondary Storage:</strong> This provides a large-capacity, non-volatile (data persists even when power is off) storage solution for all programs and data. It is much slower and cheaper per bit than primary memory. Examples include Hard Disk Drives (HDD), Solid State Drives (SSD), and optical drives.
+        </li>
+        <li>
+          <strong>Tertiary Storage (Offline Storage):</strong> This refers to very large capacity, often removable, storage used for archiving and long-term backups. It is the slowest and cheapest per bit. Examples include magnetic tapes and optical disc libraries.
+        </li>
       </ul>
 
       <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.3 Registers</h2>
@@ -48,11 +62,35 @@
         <strong>Exam Question Alert:</strong> The use and function of Cache Memory are often tested. Understand how it speeds up CPU access.
       </p>
       <p>
-        Cache Memory is an extremely fast, small memory buffer that sits between the CPU and Primary Memory (RAM). Its purpose is to speed up data access for the CPU.
+        Cache Memory is an extremely fast, small, and expensive type of volatile computer memory that acts as a buffer between the Central Processing Unit (CPU) and the main memory (RAM). Its primary purpose is to speed up data access for the CPU by storing copies of data and instructions that the CPU is most likely to request next. This mechanism is based on the principle of locality of reference, which suggests that programs tend to access data and instructions that are spatially or temporally close to recently accessed ones.
       </p>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>Function:</strong> It stores copies of data and instructions that the CPU is likely to use next. When the CPU needs data, it first checks the cache. If found (cache hit), it's retrieved quickly. If not (cache miss), the CPU retrieves it from RAM and stores a copy in the cache for future use.</li>
-        <li><strong>Levels:</strong> Cache is typically divided into L1 (internal to CPU, fastest), L2 (external to CPU, fast), and sometimes L3 (shared among CPU cores).</li>
+        <li>
+          <strong>Function:</strong> When the CPU needs to access data or an instruction, it first checks the cache.
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li>
+              <strong>Cache Hit:</strong> If the requested data is found in the cache, it's called a "cache hit." The data is retrieved very quickly from the cache, significantly reducing the CPU's access time.
+            </li>
+            <li>
+              <strong>Cache Miss:</strong> If the requested data is not found in the cache, it's called a "cache miss." The CPU then retrieves the data from the slower main memory (RAM), and a copy of this data (along with nearby data, anticipating future needs) is simultaneously stored in the cache for faster access if it's needed again soon.
+            </li>
+          </ul>
+          This process minimizes the number of times the CPU has to access the much slower main memory, thereby improving the overall performance and efficiency of the computer system.
+        </li>
+        <li>
+          <strong>Levels:</strong> Cache memory is typically organized into multiple levels to optimize the trade-off between speed, size, and cost:
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li>
+              <strong>L1 Cache (Level 1 Cache):</strong> This is the smallest and fastest cache, located directly inside the CPU core. It stores the most frequently used instructions and data.
+            </li>
+            <li>
+              <strong>L2 Cache (Level 2 Cache):</strong> Larger and slightly slower than L1 cache, L2 cache can be either dedicated to each CPU core or shared among a few cores. It acts as a secondary buffer for data that isn't found in L1.
+            </li>
+            <li>
+              <strong>L3 Cache (Level 3 Cache):</strong> The largest and slowest of the cache levels, L3 cache is typically shared among all CPU cores on a processor. It serves as a common pool for data that isn't found in L1 or L2, further reducing the need to access main memory.
+            </li>
+          </ul>
+        </li>
       </ul>
 
       <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 20px;">5.5 Primary Memory (Main Memory)</h2>
@@ -60,33 +98,64 @@
         <strong>Exam Question Alert:</strong> Differentiating between RAM and ROM, and primary vs. secondary memory, are frequent exam questions.
       </p>
       <p>
-        Primary Memory, also known as Main Memory, is the working memory of the computer. The CPU must have programs and data loaded into Primary Memory before it can process them.
+        Primary Memory, also known as Main Memory or internal memory, is the working memory of the computer. It is directly accessible by the Central Processing Unit (CPU) and is crucial for the computer's operation. All programs and data that the CPU needs to process must first be loaded into primary memory. It acts as a temporary storage area for active data and instructions, enabling rapid access for the CPU.
       </p>
       <h3 style="color: #0056b3; margin-top: 15px;">Characteristics of Primary Memory:</h3>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>Volatile:</strong> Data is lost when the power is turned off (e.g., RAM).</li>
-        <li><strong>Direct Access:</strong> The CPU can access any location quickly and directly.</li>
-        <li><strong>High Speed:</strong> Fast enough to keep up with the CPU's processing demands.</li>
-        <li><strong>Limited Capacity:</strong> Smaller storage capacity compared to secondary storage.</li>
+        <li>
+          <strong>Volatile:</strong> Most types of primary memory (like RAM) are volatile, meaning that the data stored in them is lost as soon as the power supply is turned off.
+        </li>
+        <li>
+          <strong>Direct Access:</strong> The CPU can access any memory location directly and quickly, without having to read through preceding data. This is essential for efficient program execution.
+        </li>
+        <li>
+          <strong>High Speed:</strong> Primary memory operates at speeds comparable to the CPU, ensuring that the CPU is not held back by slow data retrieval.
+        </li>
+        <li>
+          <strong>Limited Capacity:</strong> Compared to secondary storage, primary memory has a smaller storage capacity due to its higher cost and speed requirements.
+        </li>
+        <li>
+          <strong>Expensive:</strong> Primary memory is significantly more expensive per bit than secondary storage.
+        </li>
       </ul>
 
       <h3 style="color: #0056b3; margin-top: 15px;">Types of Primary Memory:</h3>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>RAM (Random Access Memory):</strong>
+        <li>
+          <strong>RAM (Random Access Memory):</strong>
           <ul style="list-style-type: circle; margin-left: 20px;">
-            <li>Volatile, read/write memory.</li>
-            <li>Holds the operating system, application programs, and data currently in use.</li>
-            <li><strong>DRAM (Dynamic RAM):</strong> Most common type, needs constant refreshing, slower, cheaper.</li>
-            <li><strong>SRAM (Static RAM):</strong> Faster, more expensive, used for cache memory, does not need refreshing.</li>
+            <li>
+              <strong>Volatile, Read/Write Memory:</strong> RAM is the most common type of primary memory. It is volatile, meaning its contents are lost when the computer is powered down. The CPU can both read data from and write data to RAM.
+            </li>
+            <li>
+              <strong>Holds Active Data and Programs:</strong> It holds the operating system, application programs, and all data that the CPU is currently using or needs to access quickly.
+            </li>
+            <li>
+              <strong>DRAM (Dynamic RAM):</strong> This is the most common type of RAM found in computers. It stores each bit of data in a separate capacitor within an integrated circuit. Because capacitors leak charge, DRAM needs to be constantly refreshed (recharged) every few milliseconds to maintain the data, making it slower and less expensive than SRAM.
+            </li>
+            <li>
+              <strong>SRAM (Static RAM):</strong> SRAM stores data using a flip-flop circuit, which does not require constant refreshing as long as power is supplied. This makes SRAM much faster and more expensive than DRAM. SRAM is typically used for cache memory due to its speed.
+            </li>
           </ul>
         </li>
-        <li><strong>ROM (Read-Only Memory):</strong>
+        <li>
+          <strong>ROM (Read-Only Memory):</strong>
           <ul style="list-style-type: circle; margin-left: 20px;">
-            <li>Non-volatile, usually read-only.</li>
-            <li>Stores crucial firmware and instructions (like the BIOS) needed to start the computer.</li>
-            <li><strong>PROM (Programmable ROM):</strong> Blank chips that can be programmed once.</li>
-            <li><strong>EPROM (Erasable Programmable ROM):</strong> Can be erased using UV light and reprogrammed.</li>
-            <li><strong>EEPROM (Electrically Erasable Programmable ROM):</strong> Can be erased and rewritten electrically (used in modern flash BIOS chips).</li>
+            <li>
+              <strong>Non-Volatile, Primarily Read-Only:</strong> ROM is non-volatile, meaning its contents are retained even when the power is turned off. As its name suggests, data stored in ROM is typically read-only and cannot be easily modified by the user.
+            </li>
+            <li>
+              <strong>Stores Crucial Firmware:</strong> ROM stores crucial firmware and instructions, such as the BIOS (Basic Input/Output System) or UEFI (Unified Extensible Firmware Interface), which are essential for the computer to start up (boot) and perform basic hardware initialization.
+            </li>
+            <li>
+              <strong>PROM (Programmable ROM):</strong> A blank ROM chip that can be programmed once by the user or manufacturer. Once programmed, its contents cannot be erased.
+            </li>
+            <li>
+              <strong>EPROM (Erasable Programmable ROM):</strong> This type of ROM can be erased by exposing it to strong ultraviolet light and then reprogrammed.
+            </li>
+            <li>
+              <strong>EEPROM (Electrically Erasable Programmable ROM):</strong> EEPROM can be erased and rewritten electrically, byte by byte, without the need for ultraviolet light. Flash memory, commonly used in SSDs and USB drives, is a type of EEPROM.
+            </li>
           </ul>
         </li>
       </ul>
@@ -108,13 +177,18 @@
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Usage</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Working memory, temporary storage</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Stores start-up instructions (firmware)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Working memory, temporary storage for active programs and data</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Stores start-up instructions (firmware) and critical system data</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Operation</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Read and Write</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Primarily Read</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Read and Write operations are frequent and fast</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Primarily Read operations; writing is rare and often requires special procedures</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Cost</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">More expensive per bit than secondary storage</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Generally less expensive than RAM, but more than secondary storage</td>
           </tr>
         </tbody>
       </table>
@@ -131,23 +205,28 @@
         <tbody>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Speed</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Slower</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Faster (used for Cache memory)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Slower (due to refresh cycles)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Faster (no refresh needed, used for Cache memory)</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Density</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">High (more memory in less space)</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Low (less memory in more space)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">High (more memory in less space, suitable for main memory)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Low (less memory in more space, suitable for cache)</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Cost</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Less Expensive</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">More Expensive</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Less Expensive per bit</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">More Expensive per bit</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Refresh</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Requires constant electrical refresh</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Does not require constant refresh</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Requires constant electrical refresh to retain data</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Does not require constant refresh to retain data</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Power Consumption</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Higher (due to refresh cycles)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Lower (when idle)</td>
           </tr>
         </tbody>
       </table>
@@ -157,31 +236,69 @@
         <strong>Exam Question Alert:</strong> Expect questions on the characteristics and types of secondary memory, and detailed comparisons like HDD vs. SSD.
       </p>
       <p>
-        Secondary Memory, also known as Auxiliary Storage, provides a permanent, long-term storage solution for all programs and data. It is non-volatile, meaning data persists even when the computer is turned off.
+        Secondary Memory, also known as Auxiliary Storage, provides a permanent, long-term storage solution for all programs and data. Unlike primary memory, it is non-volatile, meaning data persists even when the computer is turned off. Secondary storage devices are essential for storing the operating system, applications, and user files, making them available each time the computer is powered on. They offer significantly higher storage capacity at a lower cost per bit compared to primary memory, though with slower access speeds.
       </p>
       <h3 style="color: #0056b3; margin-top: 15px;">Characteristics of Secondary Memory:</h3>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>Non-Volatile:</strong> Data is permanent until intentionally erased.</li>
-        <li><strong>High Capacity:</strong> Designed to store vast amounts of data.</li>
-        <li><strong>Lower Speed:</strong> Much slower access time compared to Primary Memory.</li>
-        <li><strong>Economical:</strong> Lower cost per bit of storage than Primary Memory.</li>
+        <li>
+          <strong>Non-Volatile:</strong> Data stored in secondary memory is permanent and remains intact even after the power supply is removed.
+        </li>
+        <li>
+          <strong>High Capacity:</strong> Secondary storage devices are designed to store vast amounts of data, ranging from gigabytes to terabytes, making them suitable for archiving large collections of files, media, and applications.
+        </li>
+        <li>
+          <strong>Lower Speed:</strong> Accessing data from secondary memory is significantly slower compared to primary memory due to the mechanical components involved (in HDDs) or the nature of flash memory (in SSDs) which is slower than RAM.
+        </li>
+        <li>
+          <strong>Economical:</strong> The cost per unit of storage (e.g., per gigabyte) is much lower for secondary memory than for primary memory, making large-scale data storage affordable.
+        </li>
+        <li>
+          <strong>Offline Storage Possible:</strong> Many secondary storage devices are removable (e.g., USB drives, external HDDs), allowing for offline storage and easy data transfer between computers.
+        </li>
       </ul>
 
       <h3 style="color: #0056b3; margin-top: 15px;">Types of Secondary Memory:</h3>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>Magnetic Storage:</strong> Uses magnetized material to store data. Data is read/written by tiny electromagnets.
+        <li>
+          <strong>Magnetic Storage:</strong> These devices use magnetized material to store data. Data is recorded and retrieved by tiny read/write heads that magnetize or sense magnetic patterns on a rotating platter or tape.
           <ul style="list-style-type: circle; margin-left: 20px;">
-            <li><strong>Examples:</strong> Hard Disk Drives (HDD), Magnetic Tapes.</li>
+            <li>
+              <strong>Hard Disk Drives (HDD):</strong> The most common form of magnetic storage, HDDs consist of spinning platters coated with magnetic material. Data is stored on these platters in concentric tracks. They offer high capacity but are relatively slow due to mechanical movement.
+            </li>
+            <li>
+              <strong>Magnetic Tapes:</strong> Primarily used for archival storage and large-scale backups. Data is stored sequentially on a long strip of magnetic tape, meaning access is slower as the tape must be wound to the correct position.
+            </li>
           </ul>
         </li>
-        <li><strong>Optical Storage:</strong> Uses lasers to read and write data pits and lands on a reflective surface.
+        <li>
+          <strong>Optical Storage:</strong> Optical storage devices use lasers to read and write data. Data is stored as microscopic pits and lands on the surface of a plastic disc, which reflect or scatter a laser beam differently.
           <ul style="list-style-type: circle; margin-left: 20px;">
-            <li><strong>Examples:</strong> CD-ROM, DVD-ROM, Blu-ray Discs.</li>
+            <li>
+              <strong>CD-ROM (Compact Disc Read-Only Memory):</strong> An older optical storage format, primarily used for software distribution and audio.
+            </li>
+            <li>
+              <strong>DVD-ROM (Digital Versatile Disc Read-Only Memory):</strong> Offers higher storage capacity than CDs, commonly used for movies and software.
+            </li>
+            <li>
+              <strong>Blu-ray Discs (BD):</strong> The latest optical disc format, providing even higher capacities suitable for high-definition video and large data backups.
+            </li>
           </ul>
         </li>
-        <li><strong>Solid State Storage:</strong> Uses flash memory (EEPROM) technology, containing no moving parts.
+        <li>
+          <strong>Solid State Storage:</strong> These devices use flash memory (a type of EEPROM) to store data, containing no moving parts. This technology provides significant advantages in speed, durability, and form factor.
           <ul style="list-style-type: circle; margin-left: 20px;">
-            <li><strong>Examples:</strong> Solid State Drives (SSD), USB Flash Drives, SD Cards.</li>
+            <li>
+              <strong>Solid State Drives (SSD):</strong> Replace traditional HDDs in many computers due to their superior speed, silent operation, and resistance to physical shock. They store data on interconnected flash memory chips.
+            </li>
+            <li>
+              <strong>USB Flash Drives:</strong> Portable, compact solid-state storage devices commonly used for data transfer and backup.
+            </li>
+            <li>
+              <strong>SD Cards (Secure Digital Cards):</strong> Small, removable flash memory cards used in digital cameras, smartphones, and other portable devices.
+            </li>
+            <li>
+              <strong>eMMC (embedded MultiMediaCard):</strong> A type of flash storage commonly found in smartphones, tablets, and some laptops, acting as a built-in, non-volatile storage solution.
+            </li>
           </ul>
         </li>
       </ul>
@@ -198,31 +315,50 @@
         <tbody>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Technology</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Magnetic spinning platters</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Flash memory chips</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Magnetic spinning platters and read/write heads</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">NAND-based flash memory chips</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Speed</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Slower (mechanical movement)</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Much Faster (electronic access)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Slower (due to mechanical rotational latency and seek time)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Much Faster (electronic data access, no moving parts)</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Durability</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Sensitive to shocks and movement</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Highly durable (no moving parts)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Sensitive to shocks, drops, and vibrations due to moving parts</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Highly durable and resistant to physical shock (no moving parts)</td>
           </tr>
           <tr>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Noise</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Audible spinning noise</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Silent</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Audible spinning noise and clicking sounds from read/write heads</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Silent operation</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Power Consumption</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Higher (requires power to spin platters and move heads)</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Lower (more energy-efficient, beneficial for laptops and mobile devices)</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Cost per GB</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Lower</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Higher</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Fragmentation</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Can suffer from file fragmentation, impacting performance over time</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Not affected by fragmentation in the same way as HDDs</td>
           </tr>
         </tbody>
       </table>
 
       <h3 style="color: #0056b3; margin-top: 15px;">Direct vs. Sequential Access Magnetic Memory:</h3>
       <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><strong>Direct Access (Random Access):</strong> Allows the device to jump directly to any location on the storage medium to retrieve data. Access time is relatively independent of data location (e.g., HDDs, SSDs).</li>
-        <li><strong>Sequential Access:</strong> Data must be read or written in the order it was recorded. To access data in the middle, all preceding data must be read first (e.g., Magnetic Tapes).</li>
+        <li>
+          <strong>Direct Access (Random Access):</strong> This method allows the storage device to directly access any specific piece of data regardless of its physical location on the storage medium. The time taken to access data is largely independent of its position. Hard Disk Drives (HDDs) and Solid State Drives (SSDs) are examples of direct access storage devices, as their read/write heads or electronic controllers can quickly jump to any data block. This is crucial for operating systems and applications that need to access scattered data quickly.
+        </li>
+        <li>
+          <strong>Sequential Access:</strong> In sequential access, data must be read or written in the linear order in which it was stored. To access a piece of data located in the middle or end of the storage medium, all preceding data must be read first. Magnetic Tapes are the classic example of sequential access devices. While cost-effective for large archives, they are very slow for retrieving specific pieces of data, making them unsuitable for active data storage.
+        </li>
       </ul>
 
       <div style="margin-top: 40px; padding: 15px; background-color: #e9f7ef; border-left: 5px solid #28a745; font-style: italic; color: #28a745;">
