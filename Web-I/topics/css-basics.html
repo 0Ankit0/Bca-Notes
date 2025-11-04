@@ -140,8 +140,14 @@
             <section id="css-syntax-selectors" class="content-section">
               <h2><i class="fas fa-code"></i> CSS Syntax and Selectors</h2>
 
-              <div class="topic-grid">
-                <div class="topic-card">
+              <!-- Basic Selectors -->
+              <div class="selector-category">
+                <h3 class="category-title"><i class="fas fa-tag"></i> Basic Selectors</h3>
+                <p class="category-description">The fundamental selectors that target elements by type, class, ID, or universally.</p>
+
+                <div class="topic-grid">
+                  <!-- Basic Selectors -->
+                  <div class="topic-card">
                   <div class="card-content">
                     <h3 style="color: #3b82f6; font-size: 1.5rem">
                       Element Selector
@@ -191,19 +197,163 @@
                     </div>
                   </div>
                   <div class="code-block">
-                    .highlight-demo { background: #10b981; color: white;
+                    <pre><code class="language-css">.highlight-demo { background: #10b981; color: white;
                     padding: 0.5rem 1rem; border-radius: 6px; display:
-                    inline-block; }
+                    inline-block; }</code></pre>
                   </div>
                 </div>
 
                 <div class="topic-card">
                   <div class="card-content">
-                    <button
-                      class="btn btn-primary"
-                      style="
-                        background: #8b5cf6;
-                        color: white;
+                    <div style="background: #8b5cf6; color: white; padding: 1rem; border-radius: 8px;">
+                      <strong>Universal Selector</strong>
+                    </div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">* { box-sizing: border-box; }</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attribute Selectors -->
+              <div class="selector-category">
+                <h3 class="category-title"><i class="fas fa-brackets-square"></i> Attribute Selectors</h3>
+                <p class="category-description">Selectors that target elements based on their attributes and attribute values.</p>
+
+                <div class="topic-grid">
+                  <div class="topic-card">
+                    <div class="card-content">
+                      <input type="text" placeholder="Type here..." style="border: 2px solid #3b82f6; padding: 0.5rem; border-radius: 4px;" data-required="true">
+                    </div>
+                    <div class="code-block">
+                      <pre><code class="language-css">[data-required] { border: 2px solid #3b82f6; }</code></pre>
+                    </div>
+                  </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <input type="text" value="exact" style="border: 2px solid #10b981; padding: 0.5rem; border-radius: 4px;" data-status="exact">
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">[data-status="exact"] { border: 2px solid #10b981; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div class="icon icon-large" style="background: #f59e0b; width: 50px; height: 50px; border-radius: 50%; display: inline-block;" data-size="large"></div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">[data-size~="large"] { width: 50px; height: 50px; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #ef4444; color: white; padding: 0.5rem; border-radius: 4px;" lang="en-US">English (US)</div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">[lang|="en"] { background: #ef4444; color: white; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #8b5cf6; color: white; padding: 0.5rem; border-radius: 4px;" data-prefix="btn">Button</div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">[data-prefix^="btn"] { background: #8b5cf6; color: white; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #06b6d4; color: white; padding: 0.5rem; border-radius: 4px;" data-suffix="primary">Primary</div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">[data-suffix$="primary"] { background: #06b6d4; color: white; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #84cc16; color: white; padding: 0.5rem; border-radius: 4px;" data-type="success-message">Success</div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">[data-type*="success"] { background: #84cc16; color: white; }</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Combinators -->
+              <div class="selector-category">
+                <h3 class="category-title"><i class="fas fa-link"></i> Combinators</h3>
+                <p class="category-description">Selectors that define relationships between elements in the DOM tree.</p>
+
+                <div class="topic-grid">
+                  <div class="topic-card">
+                    <div class="card-content">
+                      <div class="container" style="border: 1px solid #ccc; padding: 1rem;">
+                        <p style="color: #6b7280;">Parent paragraph</p>
+                        <div style="background: #e5e7eb; padding: 0.5rem;">
+                          <p style="color: #3b82f6;">Child paragraph</p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">.container p { color: #3b82f6; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div class="parent" style="border: 1px solid #ccc; padding: 1rem;">
+                      <p style="color: #6b7280;">Parent</p>
+                      <p style="color: #ef4444;">Direct child</p>
+                    </div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">.parent > p { color: #ef4444; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <h3 style="color: #6b7280;">Heading</h3>
+                    <p style="color: #10b981;">Adjacent paragraph</p>
+                    <p style="color: #6b7280;">Next paragraph</p>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">h3 + p { color: #10b981; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <h3 style="color: #6b7280;">Heading</h3>
+                    <p style="color: #f59e0b;">First sibling</p>
+                    <p style="color: #f59e0b;">Second sibling</p>
+                    <p style="color: #f59e0b;">Third sibling</p>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">h3 ~ p { color: #f59e0b; }</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pseudo-classes -->
+              <div class="selector-category">
+                <h3 class="category-title"><i class="fas fa-mouse-pointer"></i> Pseudo-classes</h3>
+                <p class="category-description">Selectors that target elements based on their state or position in the document.</p>
+
+                <div class="topic-grid">
+                  <div class="topic-card">
+                    <div class="card-content">
+                      <button
+                        class="btn btn-primary"
+                        style="
+                          background: #8b5cf6;
+                          color: white;
                         border: none;
                         padding: 0.75rem 1.5rem;
                         border-radius: 6px;
@@ -217,10 +367,198 @@
                     </button>
                   </div>
                   <div class="code-block">
-                    button:hover { background: #7c3aed; transform:
-                    translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+                    <pre><code class="language-css">button:hover { background: #7c3aed; transform:
+                    translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }</code></pre>
                   </div>
                 </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <button style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">Click Me</button>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">button:active { transform: scale(0.95); }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <input type="text" placeholder="Focus me" style="border: 2px solid #ccc; padding: 0.5rem; border-radius: 4px; outline: none;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#ccc'">
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <a href="#" style="color: #8b5cf6; text-decoration: none;">Visited Link</a>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">a:visited { color: #7c3aed; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="background: #10b981; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">First</li>
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">Second</li>
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">Third</li>
+                    </ul>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">li:first-child { background: #10b981; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">First</li>
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">Second</li>
+                      <li style="background: #ef4444; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">Last</li>
+                    </ul>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">li:last-child { background: #ef4444; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="background: #f59e0b; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">1st</li>
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">2nd</li>
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">3rd</li>
+                      <li style="background: #6b7280; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">4th</li>
+                      <li style="background: #f59e0b; color: white; padding: 0.5rem; margin-bottom: 0.25rem; border-radius: 4px;">5th</li>
+                    </ul>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">li:nth-child(odd) { background: #f59e0b; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #84cc16; color: white; padding: 0.5rem; border-radius: 4px; display: inline-block;">Only Child</div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">div:only-child { background: #84cc16; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #06b6d4; color: white; padding: 0.5rem; border-radius: 4px;">Not a button</div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">div:not(button) { background: #06b6d4; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <input type="checkbox" checked style="margin-right: 0.5rem;"><label style="color: #10b981;">Checked</label>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">input:checked + label { color: #10b981; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <input type="text" disabled style="border: 1px solid #ef4444; padding: 0.5rem; border-radius: 4px; background: #fee2e2;">
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">input:disabled { background: #fee2e2; border-color: #ef4444; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <input type="email" required style="border: 2px solid #f59e0b; padding: 0.5rem; border-radius: 4px;">
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">input:required { border-color: #f59e0b; }</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pseudo-elements -->
+              <div class="selector-category">
+                <h3 class="category-title"><i class="fas fa-magic"></i> Pseudo-elements</h3>
+                <p class="category-description">Selectors that create virtual elements to style parts of existing elements.</p>
+
+                <div class="topic-grid">
+                  <div class="topic-card">
+                    <div class="card-content">
+                      <div style="background: #8b5cf6; color: white; padding: 1rem; border-radius: 8px; position: relative;">
+                        Content
+                        <span style="position: absolute; top: -10px; left: -10px; background: #ef4444; color: white; padding: 0.25rem 0.5rem; border-radius: 50%; font-size: 0.75rem;">!</span>
+                      </div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">.card::before { content: "!"; position: absolute; top: -10px; left: -10px; background: #ef4444; color: white; border-radius: 50%; padding: 0.25rem 0.5rem; font-size: 0.75rem; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #10b981; color: white; padding: 1rem; border-radius: 8px; position: relative;">
+                      Content
+                      <span style="position: absolute; bottom: -10px; right: -10px; background: #f59e0b; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">New</span>
+                    </div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">.card::after { content: "New"; position: absolute; bottom: -10px; right: -10px; background: #f59e0b; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <p style="color: #3b82f6; font-size: 1.2rem; line-height: 1.6;">
+                      This is the first line of text that will be styled differently.
+                      This second line should look normal.
+                    </p>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">p::first-line { color: #3b82f6; font-weight: bold; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <p style="font-size: 1.2rem; line-height: 1.6;">
+                      <span style="color: #ef4444; font-size: 2rem; font-weight: bold; float: left; margin-right: 0.25rem;">T</span>his is a paragraph where the first letter is styled.
+                    </p>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">p::first-letter { color: #ef4444; font-size: 2rem; font-weight: bold; float: left; margin-right: 0.25rem; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <div style="background: #e5e7eb; padding: 1rem; border-radius: 8px; user-select: text;" onselectstart="this.style.background='#dbeafe'">
+                      Select this text to see the selection styling.
+                    </div>
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">::selection { background: #dbeafe; color: #1e40af; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="topic-card">
+                  <div class="card-content">
+                    <input type="text" placeholder="Enter your name..." style="border: 1px solid #ccc; padding: 0.5rem; border-radius: 4px; color: #6b7280;" onfocus="this.placeholder=''">
+                  </div>
+                  <div class="code-block">
+                    <pre><code class="language-css">input::placeholder { color: #6b7280; opacity: 0.7; }</code></pre>
+                  </div>
+                </div>
+              </div>
               </div>
             </section>
 

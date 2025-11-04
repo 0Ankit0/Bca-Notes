@@ -518,6 +518,40 @@
   }
 }
 
+// Selector category styles for organized selector sections
+.selector-category {
+  margin-bottom: $spacing-4xl;
+
+  &:last-child {
+    margin-bottom: $spacing-3xl;
+  }
+
+  .category-title {
+    @include subsection-header;
+    margin-bottom: $spacing-md;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    i {
+      color: $primary-color;
+      font-size: font-size('lg');
+    }
+  }
+
+  .category-description {
+    color: $text-secondary;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-2xl;
+    font-style: italic;
+  }
+
+  .topic-grid {
+    margin-top: $spacing-xl;
+  }
+}
+
 // Interactive elements
 .interactive-element {
   @include interactive-card;
