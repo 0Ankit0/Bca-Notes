@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 6: Data Communication and Computer Network</title>
+  </head>
+  <body
+    style="
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    "
+  >
+    <div
+      style="
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1
+        style="
+          text-align: center;
+          color: #004085;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        Unit 6: Data Communication and Computer Network
+      </h1>
+
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Focus:</strong> This unit is crucial for understanding how
+        computers communicate. Pay close attention to data transmission modes
+        and media, different types of networks, and especially network
+        topologies, as these are frequently tested concepts.
+      </p>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        6.1 Data Communication
+      </h2>
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.1.1 Introduction to Data Communication
+      </h3>
+      <p>
+        Data Communication is the process of transmitting digital or analog data
+        between two or more computing devices, systems, or locations via some
+        form of transmission medium. It forms the backbone of all networked
+        interactions, from sending an email to browsing the web.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.1.2 Basic Elements of a Communication System
+      </h3>
+      <p>
+        A communication system requires five basic elements to function
+        effectively:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Sender (Source):</strong> The device that originates the data
+          message (e.g., a computer, smartphone).
+        </li>
+        <li>
+          <strong>Receiver (Destination):</strong> The device that receives the
+          data message.
+        </li>
+        <li>
+          <strong>Medium:</strong> The physical path over which a message
+          travels (e.g., cables, airwaves).
+        </li>
+        <li>
+          <strong>Message:</strong> The data or information to be communicated.
+        </li>
+        <li>
+          <strong>Protocol:</strong> A set of rules governing how data is
+          exchanged, ensuring that both sender and receiver understand each
+          other (e.g., TCP/IP).
+        </li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.1.3 Data Transmission Modes
+      </h3>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Be prepared to define and
+        differentiate between Simplex, Half-Duplex, and Full-Duplex transmission
+        modes with examples.
+      </p>
+      <p>
+        Data transmission modes define the direction of flow of information
+        between two linked communication devices. Understanding these modes is
+        crucial for designing and troubleshooting communication systems, as each
+        mode has specific characteristics regarding data flow and efficiency.
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Mode
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Description
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Characteristics
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Example
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Simplex</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Data flows in only one direction from sender to receiver. The
+              communication channel is entirely dedicated to one-way
+              transmission.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Unidirectional communication; no acknowledgment from receiver to
+              sender. Simple but limited for interactive communication.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Radio broadcasting, traditional television broadcasts, a computer
+              sending data to a printer, a keyboard sending input to a computer.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Half-Duplex</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Data can flow in both directions between sender and receiver, but
+              not simultaneously. The channel alternates between sending and
+              receiving.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Bidirectional but alternating communication; takes turns to
+              send/receive. More flexible than simplex, but slower for rapid
+              exchanges.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Walkie-talkies (one person speaks while the other listens, then
+              roles switch), citizen band (CB) radio, early internet dial-up
+              modems.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Full-Duplex</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Data can flow simultaneously in both directions between sender and
+              receiver. The communication channel supports concurrent two-way
+              transmission.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Bidirectional and simultaneous communication; highly efficient for
+              interactive and high-speed data exchange. Requires more complex
+              circuitry.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Telephone conversations (both parties can speak and listen at the
+              same time), high-speed Ethernet connections, instant messaging
+              applications.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.1.4 Data Transmission Speed
+      </h3>
+      <p>
+        Data transmission speed defines the capacity of the transmission medium,
+        typically measured in bits per second (bps).
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Narrowband:</strong> Low speed, typically below 64 Kbps. Used
+          for legacy systems like telegraph and low-speed modems.
+        </li>
+        <li>
+          <strong>Voiceband:</strong> Medium speed, generally 300 bps to 9600
+          bps. Historically used for voice and basic phone-line modems.
+        </li>
+        <li>
+          <strong>Broadband:</strong> High speed, offering transfer rates of 1
+          Mbps and higher. Used for high-speed internet, video streaming, and
+          modern local area networks (LANs).
+        </li>
+      </ul>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.1.5 Data Transmission Media
+      </h3>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Explaining different transmission
+        media in detail is a common exam question.
+      </p>
+      <p>
+        Data transmission media are the physical channels or pathways through
+        which data travels from a sender to a receiver. These media can be
+        broadly categorized into two main types: guided (wired) media, where
+        signals are confined to a solid medium, and unguided (wireless) media,
+        where signals propagate through the air or space. The choice of
+        transmission medium significantly impacts the speed, reliability, cost,
+        and range of a communication system.
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Type
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Medium
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Description & Application
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Advantages
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Disadvantages
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              rowspan="3"
+              style="border: 1px solid #ddd; padding: 8px; text-align: left"
+            >
+              <strong>Guided (Wired)</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Twisted-Pair Wire</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Consists of two insulated copper wires twisted together to reduce
+              electromagnetic interference (EMI) from external sources and
+              crosstalk between adjacent pairs. Used for telephone lines (UTP)
+              and older Ethernet (LANs).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Inexpensive, easy to install, widely available.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Limited bandwidth, susceptible to noise and attenuation over long
+              distances, relatively low security.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Coaxial Cable</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Features a central copper conductor surrounded by an insulating
+              layer, a braided metal shield, and an outer plastic jacket. The
+              shielding provides better resistance to EMI than twisted-pair.
+              Used for cable television, older LANs (e.g., 10Base2, 10Base5
+              Ethernet), and short-distance connections.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Higher bandwidth than twisted-pair, better noise immunity, more
+              secure.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              More expensive and harder to install than twisted-pair, still
+              susceptible to some interference.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Optical Fibers</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Transmits data as pulses of light through thin strands of glass or
+              plastic. Each fiber is about the diameter of a human hair. Offers
+              extremely high bandwidth, immunity to electrical interference, and
+              can transmit data over very long distances with minimal signal
+              loss. Used for backbone networks, high-speed internet
+              (Fiber-to-the-Home/FTTH), and data centers.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Extremely high bandwidth, very long transmission distances, immune
+              to electromagnetic interference, highly secure.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Very expensive to install, difficult to splice and repair,
+              requires specialized equipment.
+            </td>
+          </tr>
+          <tr>
+            <td
+              rowspan="3"
+              style="border: 1px solid #ddd; padding: 8px; text-align: left"
+            >
+              <strong>Unguided (Wireless)</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Radio Waves</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Electromagnetic waves with frequencies ranging from 3 kHz to 300
+              GHz. They are omnidirectional and can penetrate walls, making them
+              suitable for broadcasting. Used for AM/FM radio, television,
+              cordless phones, and wireless LANs (Wi-Fi).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Easy to install, can cover large areas, mobile communication
+              possible.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Susceptible to interference, lower security, limited bandwidth
+              compared to fiber optics.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Microwave System</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Uses high-frequency radio signals (typically 2 GHz to 40 GHz)
+              transmitted via line-of-sight parabolic antennae. Microwaves are
+              unidirectional and do not easily penetrate solid objects. Used for
+              long-distance terrestrial communication (point-to-point), cellular
+              networks, and satellite communication.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              High bandwidth, suitable for long-distance communication, no
+              cabling required.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Requires line-of-sight, susceptible to weather conditions (rain
+              fade), high installation cost for towers.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Communication Satellite</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Utilizes geostationary or low-earth orbit satellites to relay
+              signals over very long distances, covering vast geographical
+              areas. Signals are sent from an earth station to a satellite
+              (uplink) and then retransmitted back to another earth station
+              (downlink). Used for global communication, TV broadcasting,
+              satellite internet, and GPS.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Global coverage, suitable for remote areas, high bandwidth for
+              broadcasting.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              High latency (delay), very high cost, susceptible to signal
+              degradation (rain fade), security concerns.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        6.2 Computer Network
+      </h2>
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.2.1 Definition of Computer Network
+      </h3>
+      <p>
+        A Computer Network is an interconnected group of two or more independent
+        computers and peripheral devices linked together to share resources
+        (data, hardware, software) and communicate. Networks enable efficient
+        resource utilization, faster communication, and centralized data
+        management.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        6.2.2 Types of Computer Network
+      </h3>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Expect questions asking you to
+        define and differentiate between various types of computer networks
+        (PAN, LAN, MAN, WAN).
+      </p>
+      <p>
+        Computer networks are classified based on their geographical scope, the
+        number of devices they connect, and their ownership. This classification
+        helps in understanding their design, purpose, and the technologies used
+        to implement them.
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Type
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Acronym
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Range
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Description & Application
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Personal Area Network</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              PAN
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Few meters (typically up to 10 meters)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Connects devices around a single person, such as smartphones,
+              tablets, headphones, and wearable devices. Technologies like
+              Bluetooth and infrared are commonly used. Example: Connecting a
+              phone to wireless earbuds or a smartwatch.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Local Area Network</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              LAN
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Small geographical area (e.g., a single office, building, or a
+              small campus)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Connects computers and peripheral devices within a limited area,
+              allowing resource sharing (printers, files) and communication.
+              Ethernet and Wi-Fi are common LAN technologies. Example: All
+              computers and printers connected in an office building or a home
+              network.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Campus Area Network</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              CAN
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Multiple buildings within a limited geographical area (e.g., a
+              university campus, corporate park)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Interconnects multiple LANs within a defined campus area. It's
+              larger than a LAN but smaller than a MAN. Example: A university
+              network connecting various departmental buildings, libraries, and
+              dormitories.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Metropolitan Area Network</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              MAN
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              City or a large geographical area (typically spanning a city or a
+              large town)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Connects multiple LANs across a metropolitan area. It's often
+              owned and operated by a single entity (like a city government or a
+              large corporation) but can also be a public network. Example:
+              Connecting various branch offices of a company within a city, or a
+              city-wide Wi-Fi network.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Wide Area Network</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              WAN
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Large geographical area (e.g., across countries or continents)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Connects networks over vast distances. WANs are typically used to
+              connect LANs and MANs, allowing global communication. The Internet
+              is the largest and most well-known example of a WAN. Example:
+              Connecting a company's headquarters in one country to its branch
+              offices in other countries.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        Advantages and Disadvantages of Networking:
+      </h3>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Advantages
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Disadvantages
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Resource Sharing:</strong> Enables users to share
+              expensive resources like printers, scanners, and software
+              licenses.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>High Initial Setup Cost:</strong> Cabling, hardware
+              (routers, switches), and configuration can be expensive.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Communication:</strong> Facilitates fast, efficient
+              communication (email, instant messaging, video conferencing).
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Security Vulnerabilities:</strong> Networks are
+              susceptible to data breaches, viruses, and other cyber threats.
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Centralization of Data:</strong> Data can be stored on a
+              central server for easier backup, management, and access control.
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Network Failure:</strong> If the central server or
+              critical network component fails, the work of all connected
+              systems can be halted.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #0056b3; margin-top: 15px">6.2.3 Network Topologies</h3>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Explaining different network
+        topologies with diagrams (or textual descriptions) and their
+        advantages/disadvantages is a very common and important exam question.
+      </p>
+      <p>
+        Network topology refers to the physical or logical arrangement of the
+        network components (nodes, links, etc.) and how they are connected to
+        each other. It dictates how data flows within the network, influencing
+        its performance, reliability, scalability, and cost. Understanding
+        different topologies is crucial for designing efficient and robust
+        computer networks.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Bus Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> In a bus topology, all devices in
+              the network are connected to a single central cable, often called
+              the backbone or bus. Data is transmitted along this single cable,
+              and all devices receive the signal, but only the intended
+              recipient processes it. Terminators are used at both ends of the
+              cable to absorb the signal and prevent reflections.
+            </li>
+            <li>
+              <strong>Advantages:</strong> It is simple to install and requires
+              less cabling than other topologies, making it cost-effective for
+              small networks.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> A single cable failure can take
+              down the entire network. It is difficult to troubleshoot problems,
+              and performance degrades significantly as more devices are added
+              to the network due to increased collisions.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Star Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> In a star topology, all devices are
+              connected individually to a central hub, switch, or server. Each
+              device has a dedicated connection to the central device, and all
+              communication between devices must pass through this central
+              point.
+            </li>
+            <li>
+              <strong>Advantages:</strong> It is easy to install and manage. The
+              failure of one device or its cable does not affect the rest of the
+              network. Troubleshooting is also easier as faults can be isolated
+              quickly.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> It requires more cabling than a
+              bus topology, leading to higher installation costs. If the central
+              hub or switch fails, the entire network becomes inoperable.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Ring Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> In a ring topology, devices are
+              connected in a closed loop, forming a continuous circle. Data
+              travels in one direction (unidirectional) around the ring, passing
+              through each device until it reaches its destination. Each device
+              acts as a repeater, regenerating the signal.
+            </li>
+            <li>
+              <strong>Advantages:</strong> Data transfer can be high-speed, and
+              collisions are typically avoided (especially in token ring
+              networks where a token is passed around to grant transmission
+              rights).
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> The failure of a single link or
+              device can disrupt the entire network. Adding or removing devices
+              is difficult and requires temporarily shutting down the network.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Mesh Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> In a mesh topology, every device in
+              the network is connected directly to every other device. This
+              creates multiple redundant paths for data transmission.
+            </li>
+            <li>
+              <strong>Advantages:</strong> It offers extremely high reliability
+              and fault tolerance because if one path fails, data can be
+              rerouted through another. It is used in critical networks where
+              continuous operation is paramount.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> It is very expensive and complex
+              to implement due to the excessive amount of cabling and the number
+              of connections required (n*(n-1)/2 connections for n devices).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Tree Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> A tree topology is a hierarchical
+              structure that combines characteristics of both bus and star
+              topologies. It has a central root node, which connects to other
+              nodes (branches), and these branches can further connect to more
+              nodes, forming a tree-like structure.
+            </li>
+            <li>
+              <strong>Advantages:</strong> It is easy to extend and manage.
+              Fault isolation is easier than in a bus topology, as problems can
+              often be traced to a specific branch.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> If the central hub or backbone
+              cable fails, entire segments of the network can become inoperable.
+              It can be complex to configure and requires significant cabling.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Hybrid Topology:</strong>
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Description:</strong> A hybrid topology is a combination
+              of two or more different basic network topologies (e.g., a
+              star-bus topology where several star networks are connected via a
+              bus backbone).
+            </li>
+            <li>
+              <strong>Advantages:</strong> It offers great flexibility and
+              scalability, allowing organizations to design networks that meet
+              specific requirements and integrate existing network components.
+            </li>
+            <li>
+              <strong>Disadvantages:</strong> Hybrid topologies are typically
+              complex to design, implement, and manage. They can also be more
+              expensive due to the combination of different hardware and
+              software components.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        6.3 Intranet, Extranet, and Internet
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Differentiating between Intranet,
+        Extranet, and Internet is a common short note or comparison question.
+      </p>
+      <p>
+        While often used interchangeably by the general public, Intranet,
+        Extranet, and Internet refer to distinct types of networks with
+        different scopes, access levels, and purposes. Understanding their
+        differences is crucial in the context of network security, information
+        sharing, and business operations.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Internet:</strong> The Internet is a vast, public, and global
+          system of interconnected computer networks that uses the standard
+          Internet Protocol Suite (TCP/IP) to serve billions of users worldwide.
+          It is a decentralized network accessible to everyone, offering a wide
+          range of services such as the World Wide Web, email, file transfer,
+          and online gaming. It is characterized by its open access and global
+          reach.
+        </li>
+        <li>
+          <strong>Intranet:</strong> An Intranet is a private network belonging
+          to an organization, accessible only to its members, employees, or
+          other authorized users. It uses Internet protocols and technologies
+          (like web browsers, FTP, email) but is secured by firewalls and other
+          security measures to restrict external access. Intranets are primarily
+          used for internal communication, collaboration, and sharing of company
+          resources and information within the organization.
+        </li>
+        <li>
+          <strong>Extranet:</strong> An Extranet is an extension of an
+          organization's Intranet that allows controlled access to authorized
+          external users, such as customers, vendors, suppliers, or business
+          partners. It facilitates secure business-to-business (B2B)
+          communication and collaboration by providing limited access to
+          specific internal resources. Extranets are typically secured with
+          usernames, passwords, and often VPN (Virtual Private Network)
+          technology to ensure data privacy and integrity.
+        </li>
+      </ul>
+      <h3 style="color: #0056b3; margin-top: 15px">
+        Comparison Table: Intranet, Extranet, and Internet
+      </h3>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Feature
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Internet
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Intranet
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Extranet
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Access</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Public, global access
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Private, internal to an organization
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Private, controlled access for external partners
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Scope</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Worldwide
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Limited to an organization
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Extended to authorized external entities
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Users</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Anyone with an internet connection
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Employees and authorized internal personnel
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Employees plus authorized external partners (customers, suppliers)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Security</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Minimal inherent security, relies on user-level precautions
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              High security (firewalls, access controls)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              High security (firewalls, VPNs, authentication)
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <strong>Purpose</strong>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Global information sharing, communication, commerce
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Internal communication, collaboration, resource sharing
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Secure B2B communication, shared projects, supply chain management
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        6.4 E-mail (Electronic Mail)
+      </h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> E-mail is often covered in short
+        notes or questions comparing its role with the Internet.
+      </p>
+      <p>
+        Electronic mail, commonly known as e-mail, is a method of exchanging
+        messages ("mail") between users using electronic devices. It is one of
+        the most earliest and most widely used applications on the Internet,
+        revolutionizing personal and professional communication. E-mail allows
+        for asynchronous communication, meaning senders and recipients do not
+        need to be online simultaneously to exchange messages.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Definition:</strong> E-mail is a digital communication method
+          that enables the creation, sending, receiving, and storing of
+          text-based messages (and often attachments like documents, images, and
+          videos) over computer networks, primarily the Internet. It relies on a
+          store-and-forward model, where messages are sent to a mail server and
+          retrieved by the recipient when they are online.
+        </li>
+        <li>
+          <strong>Role in Modern Life:</strong> E-mail remains an indispensable
+          tool in various aspects of modern life:
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Formal Communication:</strong> It is the standard for
+              professional and formal communication in businesses, educational
+              institutions, and government.
+            </li>
+            <li>
+              <strong>Marketing and Advertising:</strong> Companies use email
+              marketing campaigns to reach customers, promote products, and
+              share updates.
+            </li>
+            <li>
+              <strong>Customer Service:</strong> Many organizations provide
+              customer support and handle inquiries via email.
+            </li>
+            <li>
+              <strong>Digital Identity and Verification:</strong> An email
+              address is often required to sign up for online services, and it
+              plays a crucial role in account verification, password resets, and
+              two-factor authentication.
+            </li>
+            <li>
+              <strong>Collaboration:</strong> Teams use email to share
+              documents, discuss projects, and coordinate tasks.
+            </li>
+            <li>
+              <strong>Information Dissemination:</strong> Newsletters, alerts,
+              and important announcements are frequently distributed via email.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div
+        style="
+          margin-top: 40px;
+          padding: 15px;
+          background-color: #e9f7ef;
+          border-left: 5px solid #28a745;
+          font-style: italic;
+          color: #28a745;
+        "
+      >
+        <p><strong>Course Code:</strong> CMP 116</p>
+        <p><strong>Credit Hours:</strong> 3</p>
+        <p>
+          This unit provides comprehensive knowledge about data communication
+          principles and computer networking concepts.
+        </p>
+      </div>
+
+      <div class="important-questions">
+        <h2>Important Questions</h2>
+        <ul>
+          <li>
+            What is network topology? Explain basic network topologies with
+            diagram. (7)
+          </li>
+          <li>
+            Define computer network. Explain different types of computer
+            network. (7)
+          </li>
+          <li>
+            Define Network. Explain different types of network topologies in
+            brief. (8)
+          </li>
+          <li>
+            What is computer network. Explain different network topologies with
+            their advantages and disadvantages. OR Define Data Communication.
+            Explain different transmission media in details. (7)
+          </li>
+          <li>Write short notes on: (Any two)</li>
+          <ul>
+            <li>Intranet & Extranet</li>
+            <li>Data Transmission Modes</li>
+            <li>Internet and E-mail</li>
+          </ul>
+        </ul>
+      </div>
+
+      <div
+        class="navigation"
+        style="
+          margin-top: 40px;
+          background-color: #e9f7ef;
+          border-left: 5px solid #28a745;
+          padding: 15px;
+          border-radius: 8px;
+        "
+      >
+        <h2 style="color: #004085; margin-top: 0; margin-bottom: 10px">
+          Navigation
+        </h2>
+        <ul
+          style="
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+          "
+        >
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="index.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Home</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit1.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 1</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit2.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 2</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit3.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 3</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit4.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 4</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit5.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 5</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit7.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 7</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit8.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 8</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

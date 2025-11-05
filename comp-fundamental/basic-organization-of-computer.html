@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 2: Basic Organization of Computer</title>
+  </head>
+  <body
+    style="
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    "
+  >
+    <div
+      style="
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1
+        style="
+          text-align: center;
+          color: #004085;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        Unit 2: Basic Organization of Computer
+      </h1>
+
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Focus:</strong> This unit is critical for understanding how
+        a computer works internally. Expect detailed questions on the functional
+        units and the block diagram of a computer system.
+      </p>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        2.1 Basic Functions of Computer
+      </h2>
+      <figure>
+        <img
+          src="https://www.techgeekbuzz.com/media/uploads/vijay/2023/07/12/functions_of_computer-1.jpg"
+          alt="Basic Structure of Computer"
+          style="
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+          "
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Basic Structure of Computer
+        </figcaption>
+      </figure>
+      <p>
+        At its core, a computer performs five fundamental operations to process
+        data and provide meaningful information:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Input:</strong> Receiving data and instructions from the user
+          or other sources.
+        </li>
+        <li>
+          <strong>Processing:</strong> Performing arithmetic and logical
+          operations on the data as per instructions.
+        </li>
+        <li>
+          <strong>Output:</strong> Presenting the processed results to the user.
+        </li>
+        <li>
+          <strong>Storage:</strong> Saving data and instructions for immediate
+          or future use.
+        </li>
+        <li>
+          <strong>Control:</strong> Managing and coordinating all the operations
+          within the computer system.
+        </li>
+      </ul>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/dV_lf1kyV9M"
+        title="Computer Architecture Explained With MINECRAFT"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        2.2 Basic Functional Organization of Computer
+      </h2>
+      <p>
+        A digital computer system is a complex arrangement of various
+        interconnected functional units, each designed to perform specific
+        tasks. These units work in harmony to enable the computer to receive
+        input, process data, store information, and produce output. The
+        functional organization is best understood through a block diagram,
+        which visually represents the flow of data and control signals between
+        these essential components. Understanding this fundamental architecture
+        is crucial for comprehending how a computer operates at a basic level.
+      </p>
+
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> You will very likely be asked to
+        draw and explain the block diagram of a digital computer. Practice
+        drawing it and understanding the role of each unit.
+      </p>
+
+      <h3 style="color: #0056b3; margin-top: 15px">
+        Functional Units Explained:
+      </h3>
+
+      <h4 style="color: #0056b3; margin-top: 15px">2.2.1 Input Unit</h4>
+      <p>
+        The Input Unit serves as the interface between the user or external data
+        sources and the computer system. Its primary role is to accept data and
+        instructions in a human-readable format (or other external formats) and
+        convert them into a binary code (machine-readable format) that the
+        Central Processing Unit (CPU) can understand and process. This
+        conversion is crucial because computers operate on electrical signals
+        representing binary digits (0s and 1s). Without an efficient input unit,
+        the computer would be an isolated system, unable to receive any
+        commands, data, or information from the outside world, rendering it
+        useless for practical applications.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Keyboard:</strong> A common input device for entering text,
+          numbers, and commands.
+        </li>
+        <li>
+          <strong>Mouse:</strong> A pointing device used to control a cursor on
+          a screen and select items.
+        </li>
+        <li>
+          <strong>Scanner:</strong> Converts physical documents or images into
+          digital data.
+        </li>
+        <li>
+          <strong>Microphone:</strong> Captures audio input, converting sound
+          waves into electrical signals.
+        </li>
+        <li>
+          <strong>Joystick:</strong> Primarily used for gaming and controlling
+          movement in virtual environments.
+        </li>
+        <li>
+          <strong>Webcams:</strong> Capture still images and live video,
+          converting visual information into digital data.
+        </li>
+        <li>
+          <strong>Touchscreen:</strong> Allows users to interact directly with
+          the display by touching it.
+        </li>
+        <li>
+          <strong>Barcode Reader:</strong> Reads barcodes and translates them
+          into digital data.
+        </li>
+      </ul>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/iiJ72-rzgsU"
+        title="Input Devices of Computer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <h4 style="color: #0056b3; margin-top: 10px">
+        2.2.2 Central Processing Unit (CPU)
+      </h4>
+
+      <p>
+        Often referred to as the "brain" of the computer, the Central Processing
+        Unit (CPU) is arguably the most crucial component. Its primary
+        responsibilities include executing program instructions, performing
+        arithmetic and logical operations, and managing the overall flow of data
+        and control within the computer system. The CPU continuously fetches
+        instructions from memory, decodes them to understand what operation
+        needs to be performed, and then executes these operations. This cycle of
+        fetch, decode, and execute is fundamental to all computer operations.
+        The CPU is composed of three main parts:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Arithmetic Logic Unit (ALU):</strong> This is the digital
+          circuit within the CPU that performs all arithmetic operations (such
+          as addition, subtraction, multiplication, and division) and logical
+          operations (like comparisons: greater than, less than, equal to, NOT,
+          AND, OR). The ALU is where the actual computation and decision-making
+          processes take place, making it a core component for data
+          manipulation.
+        </li>
+        <li>
+          <strong>Control Unit (CU):</strong> The Control Unit acts as the
+          central nervous system of the computer. It is responsible for
+          directing and coordinating all operations within the computer system.
+          The CU fetches instructions from main memory, interprets them, and
+          then issues control signals to other components (like the ALU, memory,
+          and I/O devices) to ensure that instructions are executed correctly
+          and in the proper sequence. It does not perform actual data processing
+          but rather manages and synchronizes all operations.
+        </li>
+        <li>
+          <strong>Registers:</strong> Registers are small, high-speed storage
+          locations that are an integral part of the CPU itself. They are used
+          to temporarily hold data, instructions, and memory addresses that the
+          CPU is currently processing or needs to access very quickly. Because
+          they are located directly within the CPU, registers provide the
+          fastest possible access to data, significantly improving the CPU's
+          efficiency and performance by reducing the need to access slower main
+          memory frequently.
+        </li>
+      </ul>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/AkFi90lZmXA?start=11"
+        title="Inside your computer - Bettina Bair"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <h4 style="color: #0056b3; margin-top: 10px">2.2.3 Memory Unit</h4>
+      <figure>
+        <img
+          src="https://media.geeksforgeeks.org/wp-content/uploads/20250401163209315392/types_of_computer_memory_.webp"
+          alt="Types of Computer Memory"
+          style="
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+          "
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Types of Computer Memory
+        </figcaption>
+      </figure>
+      <p>
+        The Memory Unit is a fundamental component of a computer system
+        responsible for storing data and instructions. It acts as the computer's
+        short-term and long-term recall system, enabling the CPU to access the
+        information it needs to perform tasks. Memory is broadly categorized
+        into primary and secondary storage, each serving different purposes
+        based on speed, capacity, and volatility.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Primary Memory (Main Memory):</strong> This type of memory is
+          directly accessible by the CPU and is characterized by its high speed.
+          It temporarily holds data and programs that are currently being
+          executed or are needed for immediate processing. Primary memory is
+          typically volatile, meaning its contents are lost when the computer is
+          turned off.
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>RAM (Random Access Memory):</strong> RAM is a volatile,
+              read/write memory. It allows data to be read from or written to
+              any location in approximately the same amount of time, regardless
+              of the data's physical location. It's used for active data and
+              program instructions.
+            </li>
+            <li>
+              <strong>ROM (Read Only Memory):</strong> ROM is non-volatile
+              memory, meaning its contents are retained even when power is off.
+              It typically stores essential startup instructions (like the BIOS
+              or UEFI firmware) that are required to boot the computer and load
+              the operating system. Data in ROM is usually programmed during
+              manufacturing and cannot be easily altered.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Secondary Storage:</strong> Also known as auxiliary storage,
+          secondary storage provides permanent storage for large amounts of data
+          and programs. Unlike primary memory, it is non-volatile and retains
+          its contents even when the computer is powered down. Secondary storage
+          is slower than primary memory but offers significantly higher capacity
+          at a lower cost per bit.
+          <ul style="list-style-type: circle; margin-left: 20px">
+            <li>
+              <strong>Hard Disk Drives (HDD):</strong> Traditional storage
+              devices that use spinning platters and read/write heads to store
+              and retrieve data magnetically.
+            </li>
+            <li>
+              <strong>Solid State Drives (SSD):</strong> Newer storage devices
+              that use flash memory to store data, offering much faster
+              performance, lower power consumption, and greater durability than
+              HDDs.
+            </li>
+            <li>
+              <strong>USB drives (Flash Drives):</strong> Portable, non-volatile
+              storage devices that use flash memory, commonly used for data
+              transfer and backup.
+            </li>
+            <li>
+              <strong>Optical Disks (CD/DVD/Blu-ray):</strong> Storage media
+              that use lasers to read and write data, primarily used for
+              software distribution, multimedia, and backup.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/1vO9l1idWac"
+        title="Every Storage Device Explained in 8 Minutes"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/p3q5zWCw8J4"
+        title="How computer memory works - Kanawat Senanan"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <h4 style="color: #0056b3; margin-top: 10px">2.2.4 Output Unit</h4>
+      <p>
+        The Output Unit is the component of the computer system that presents
+        the processed information (results) from the computer to the user or to
+        another computer system. Its main function is to convert the binary data
+        processed by the CPU back into a human-readable or usable format. This
+        allows users to interact with the computer's results, whether it's
+        viewing text, images, listening to audio, or receiving physical copies
+        of documents.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Monitor:</strong> A visual display unit that shows text,
+          images, and video output.
+        </li>
+        <li>
+          <strong>Printer:</strong> Produces hard copies of electronic documents
+          on paper.
+        </li>
+        <li>
+          <strong>Speakers:</strong> Output audio signals, allowing users to
+          hear sounds, music, and voice.
+        </li>
+        <li>
+          <strong>Projector:</strong> Displays computer output onto a large
+          screen or surface.
+        </li>
+        <li>
+          <strong>Headphones:</strong> Provide private audio output to the user.
+        </li>
+      </ul>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/yTdRHrkudGs"
+        title="Output Devices"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <h4 style="color: #0056b3; margin-top: 10px">2.2.5 Bus System</h4>
+      <figure>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Computer_system_bus.svg/500px-Computer_system_bus.svg.png"
+          alt="Block Diagram of Computer System"
+          style="
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+          "
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Block Diagram of a Computer System
+        </figcaption>
+      </figure>
+      <p>
+        The Bus System is a critical communication backbone within a computer,
+        consisting of a set of electronic pathways (wires or traces on a circuit
+        board) that connect all the internal components. Its primary function is
+        to facilitate the transfer of data, memory addresses, and control
+        signals between the Central Processing Unit (CPU), main memory (RAM),
+        and all other peripheral devices. Without a robust bus system, the
+        various parts of the computer would be unable to communicate and
+        coordinate their activities, making computation impossible. There are
+        typically three main types of buses:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Address Bus:</strong> This is a unidirectional bus that
+          carries memory addresses from the CPU to other components, such as RAM
+          and I/O devices. When the CPU wants to read data from or write data to
+          a specific memory location or I/O port, it places the address of that
+          location on the address bus. The width of the address bus determines
+          the maximum amount of physical memory that the computer system can
+          address.
+        </li>
+        <li>
+          <strong>Data Bus:</strong> This is a bidirectional bus that carries
+          the actual data being transferred between the CPU, memory, and other
+          peripherals. When the CPU reads from memory or an I/O device, data
+          travels from the memory/device to the CPU via the data bus. When the
+          CPU writes to memory or an I/O device, data travels from the CPU to
+          the memory/device. The width of the data bus determines how many bits
+          can be sent at once, impacting the system's overall data transfer
+          rate.
+        </li>
+        <li>
+          <strong>Control Bus:</strong> This bus carries control signals from
+          the CPU to other components and vice-versa. These signals manage and
+          synchronize operations throughout the computer system. Examples of
+          control signals include read/write signals (indicating whether the CPU
+          wants to read or write data), timing signals, interrupt requests, and
+          bus grant signals. The control bus ensures that all operations occur
+          in the correct sequence and at the appropriate time.
+        </li>
+      </ul>
+      <iframe
+        width="718"
+        height="413"
+        src="https://www.youtube.com/embed/alYwqzO6ZEQ"
+        title="Computer Architecture - System Bus (address, data &amp; control)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <h2
+        style="
+          color: #0056b3;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        2.3 The System Concept
+      </h2>
+      <p>
+        The system concept in computing refers to the idea that all the
+        functional units (input, processing, output, storage, and control) are
+        not isolated but work together in an integrated and coordinated manner
+        to achieve a common goal: processing information. Each component plays a
+        vital role, and the failure of one can affect the entire system's
+        performance. This holistic view emphasizes the interdependencies and
+        interactions between hardware and software components to form a
+        complete, functional computer system.
+      </p>
+
+      <div
+        style="
+          margin-top: 40px;
+          padding: 15px;
+          background-color: #e9f7ef;
+          border-left: 5px solid #28a745;
+          font-style: italic;
+          color: #28a745;
+        "
+      >
+        <p><strong>Course Code:</strong> CMP 116</p>
+        <p><strong>Credit Hours:</strong> 3</p>
+        <p>
+          This unit provides fundamental knowledge about the basic organization
+          and functional behavior of a computer system.
+        </p>
+      </div>
+
+      <div class="important-questions">
+        <h2>Important Questions</h2>
+        <ul>
+          <li>
+            What is a Processing Unit? Mention the components of Processing
+            Unit. OR Explain the digital computer system with diagram. Write
+            about each sub system in details. (7)
+          </li>
+          <li>
+            Briefly explain the functional units of a computer system along with
+            its block diagram. (8)
+          </li>
+          <li>
+            What are the functions of computer? Explain functional units of
+            computer with diagram. (7)
+          </li>
+          <li>
+            Draw the block diagram of Digital Computer. Explain each unit in
+            detail. (7)
+          </li>
+          <li>
+            Draw a functional diagram of digital computer also explain the
+            functions of each unit in details. (8)
+          </li>
+          <li>
+            Draw a Block Diagram to illustrate the basic organization of a
+            computer system and explain the functions of the various units? (8)
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="navigation"
+        style="
+          margin-top: 40px;
+          background-color: #e9f7ef;
+          border-left: 5px solid #28a745;
+          padding: 15px;
+          border-radius: 8px;
+        "
+      >
+        <h2 style="color: #004085; margin-top: 0; margin-bottom: 10px">
+          Navigation
+        </h2>
+        <ul
+          style="
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+          "
+        >
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="index.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Home</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit1.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 1</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit3.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 3</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit4.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 4</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit5.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 5</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit6.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 6</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit7.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 7</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="unit8.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 8</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
