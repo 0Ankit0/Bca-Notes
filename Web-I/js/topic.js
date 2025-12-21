@@ -2974,98 +2974,59 @@ function showPrincipleDetails(principle) {
     const detail = details[principle];
     if (!detail) return;
 
-    // Find the card that was clicked
-    const card = document.querySelector(`[data-principle="${principle}"]`);
-    if (!card) return;
-    
-    // Check if details are already shown
-    let detailsBox = card.querySelector('.principle-details-box');
-    
-    if (detailsBox) {
-        // Toggle visibility - hide if already shown
-        if (detailsBox.style.display === 'none') {
-            detailsBox.style.display = 'block';
-            card.querySelector('.btn-primary').innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
-        } else {
-            detailsBox.style.display = 'none';
-            card.querySelector('.btn-primary').innerHTML = '<i class="fas fa-arrow-right"></i> Learn More';
-        }
-        return;
-    }
-    
-    // Create details box if it doesn't exist
-    detailsBox = document.createElement('div');
-    detailsBox.className = 'principle-details-box';
-    detailsBox.style.cssText = `
-        margin-top: 20px;
-        padding: 20px;
-        background: #f8f9fa;
-        border-radius: 8px;
-        border-left: 4px solid #3b82f6;
-        animation: slideDown 0.3s ease-out;
-    `;
-    
-    detailsBox.innerHTML = `
-        <div style="margin-bottom: 20px;">
-            <p style="font-size: 14px; line-height: 1.6; color: #555; margin: 0;">${detail.description}</p>
+    // Get the principle-details container
+    const container = document.getElementById('principle-details-container');
+    if (!container) return;
+
+    // Clear previous content
+    container.innerHTML = '';
+
+    // Create details content
+    const detailsContent = document.createElement('div');
+    detailsContent.className = 'principle-detail-content';
+    detailsContent.innerHTML = `
+        <h3 style="color: #333; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-lightbulb" style="color: #3b82f6;"></i> ${detail.title}
+        </h3>
+        <div style="margin-bottom: 25px;">
+            <p style="font-size: 16px; line-height: 1.6; color: #555; margin: 0;">${detail.description}</p>
         </div>
-        
-        <div style="margin-bottom: 15px;">
-            <h4 style="color: #333; font-size: 16px; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-list-ul" style="color: #3b82f6; font-size: 14px;"></i> Examples
+
+        <div style="margin-bottom: 20px;">
+            <h4 style="color: #333; font-size: 18px; margin: 0 0 15px 0; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-list-ul" style="color: #3b82f6; font-size: 16px;"></i> Examples
             </h4>
             <ul style="list-style: none; padding: 0; margin: 0;">
                 ${detail.examples.map(example => `
-                    <li style="padding: 8px 12px; margin-bottom: 6px; background: white; border-left: 3px solid #3b82f6; border-radius: 4px; color: #444; font-size: 13px;">
-                        <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px; font-size: 12px;"></i>${example}
+                    <li style="padding: 12px 16px; margin-bottom: 8px; background: #f8f9fa; border-left: 4px solid #3b82f6; border-radius: 6px; color: #444; font-size: 14px;">
+                        <i class="fas fa-check" style="color: #3b82f6; margin-right: 10px;"></i>${example}
                     </li>
                 `).join('')}
             </ul>
         </div>
-        
+
         <div>
-            <h4 style="color: #333; font-size: 16px; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-lightbulb" style="color: #f59e0b; font-size: 14px;"></i> Implementation Tips
+            <h4 style="color: #333; font-size: 18px; margin: 0 0 15px 0; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-lightbulb" style="color: #f59e0b; font-size: 16px;"></i> Implementation Tips
             </h4>
             <ul style="list-style: none; padding: 0; margin: 0;">
                 ${detail.tips.map(tip => `
-                    <li style="padding: 8px 12px; margin-bottom: 6px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; color: #444; font-size: 13px;">
-                        <i class="fas fa-star" style="color: #f59e0b; margin-right: 8px; font-size: 12px;"></i>${tip}
+                    <li style="padding: 12px 16px; margin-bottom: 8px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 6px; color: #444; font-size: 14px;">
+                        <i class="fas fa-star" style="color: #f59e0b; margin-right: 10px;"></i>${tip}
                     </li>
                 `).join('')}
             </ul>
         </div>
     `;
-    
-    // Add animation keyframe if not already added
-    if (!document.getElementById('principle-animation-style')) {
-        const style = document.createElement('style');
-        style.id = 'principle-animation-style';
-        style.textContent = `
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
+
+    // Append to container
+    container.appendChild(detailsContent);
+
+    // Scroll to the principle-details section
+    const section = document.getElementById('principle-details');
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    
-    // Append details box to card
-    card.appendChild(detailsBox);
-    
-    // Update button text
-    card.querySelector('.btn-primary').innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
-    
-    // Smooth scroll to show the details
-    setTimeout(() => {
-        detailsBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
 }
 
 function showPattern(patternType) {

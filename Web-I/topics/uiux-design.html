@@ -70,8 +70,8 @@
                     >
                   </li>
                   <li>
-                    <a href="#principle-details" onclick="scrollToSection('principle-details')"
-                      >Principle Details</a
+                    <a href="#uiux-intro" onclick="scrollToSection('uiux-intro')"
+                      >UI/UX</a
                     >
                   </li>
                 </ul>
@@ -251,12 +251,107 @@
             </div>
           </section>
 
-          <!-- Interactive Principle Details -->
-          <section id="principle-details" class="content-section principle-details-section">
+        
+
+          <!-- 7.2 Introduction to UI/UX Design -->
+          <section id="uiux-intro" class="content-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> 7.2 Introduction to UI/UX Design</h2>
             <div class="section-content">
-              <div id="principle-details-container" class="details-container">
-                <!-- Details will be populated by JavaScript -->
-              </div>
+              <!-- 7.2.1 Wireframing with its types (Full Width) -->
+              <section>
+                <h3>7.2.1 Wireframing with its Types</h3>
+                <p>
+                  Wireframing is a crucial step in the UI/UX design process. It involves creating simplified, schematic representations of a web page or app interface, focusing on layout, structure, and functionality without distractions from colors, images, or detailed graphics.
+                </p>
+                <h4>Purpose of Wireframing:</h4>
+                <ul>
+                  <li>Visualize the basic structure and flow of a page or app.</li>
+                  <li>Communicate ideas quickly to stakeholders and team members.</li>
+                  <li>Identify usability issues early in the design process.</li>
+                  <li>Serve as a blueprint for designers and developers.</li>
+                </ul>
+                <h4>Types of Wireframes:</h4>
+                <ul>
+                  <li><strong>Low-Fidelity Wireframes:</strong> Hand-drawn sketches or simple digital layouts. Focus on placement of elements (headers, buttons, navigation). No attention to color, font, or images. Used for brainstorming and quick feedback.<br><em>Example:</em> A pencil sketch showing boxes for header, navigation, content, and footer.</li>
+                  <li><strong>Mid-Fidelity Wireframes:</strong> Created using digital tools (e.g., Balsamiq, Figma). More precise than sketches, with clearer separation of sections. May include placeholder text and basic icons. Shows navigation flow and interaction points.<br><em>Example:</em> A grayscale digital wireframe with labeled buttons and input fields.</li>
+                  <li><strong>High-Fidelity Wireframes:</strong> Closest to the final design but still without full color or images. Includes accurate spacing, grid systems, and sometimes real content. May show interactive elements (dropdowns, modals). Used for usability testing and developer handoff.<br><em>Example:</em> A detailed wireframe in Figma with real text, button states, and annotations.</li>
+                </ul>
+                <h4>Wireframing Tools:</h4>
+                <ul>
+                  <li>Paper & pencil (for low-fidelity)</li>
+                  <li>Balsamiq, Figma, Adobe XD, Sketch, Axure</li>
+                </ul>
+              </section>
+
+              <!-- 7.2.2 User Story (Full Width) -->
+              <section>
+                <h3>7.2.2 User Story</h3>
+                <p>
+                  User stories are short, simple descriptions of a feature or requirement, told from the perspective of the user. They help teams focus on user needs and guide the development process.
+                </p>
+                <h4>User Story Format:</h4>
+                <p><em>As a [type of user], I want [an action] so that [a benefit/a value].</em></p>
+                <h4>Why Use User Stories?</h4>
+                <ul>
+                  <li>Keep the team user-focused.</li>
+                  <li>Clarify requirements and expectations.</li>
+                  <li>Facilitate communication between stakeholders, designers, and developers.</li>
+                  <li>Help prioritize features and plan development.</li>
+                </ul>
+                <h4>General Examples:</h4>
+                <ul>
+                  <li>As a visitor, I want to search for products so that I can find what I need quickly.</li>
+                  <li>As a registered user, I want to view my order history so that I can track my purchases.</li>
+                  <li>As an admin, I want to manage user accounts so that I can maintain the platform.</li>
+                </ul>
+                <h4>E-commerce Landing Page Examples:</h4>
+                <ul>
+                  <li>As a first-time visitor, I want to see featured products on the landing page so that I can discover popular items easily.</li>
+                  <li>As a returning customer, I want to see personalized recommendations on the landing page so that I can find products relevant to my interests.</li>
+                  <li>As a user, I want to access the shopping cart from any page so that I can review my selections at any time.</li>
+                </ul>
+                <h4>Expanded Example for E-commerce Landing Page:</h4>
+                <ul>
+                  <li>As a shopper, I want the landing page to display a search bar, product categories, and current promotions so that I can quickly start shopping and find deals.</li>
+                  <li>As a mobile user, I want the landing page to be easy to navigate on my phone so that I can browse products without frustration.</li>
+                </ul>
+              </section>
+
+              <!-- 7.2.3 Responsive Design (Full Width) -->
+              <section>
+                <h3>7.2.3 Responsive Design</h3>
+                <p>
+                  Responsive design is an approach to web development that ensures a website or application adapts seamlessly to different devices, screen sizes, and orientations.
+                </p>
+                <h4>Why Responsive Design Matters:</h4>
+                <ul>
+                  <li>Users access websites from desktops, tablets, and smartphones.</li>
+                  <li>Enhances usability and accessibility for all users.</li>
+                  <li>Improves SEO and user retention.</li>
+                </ul>
+                <h4>Key Principles:</h4>
+                <ul>
+                  <li><strong>Fluid Grids:</strong> Use relative units (%, em, rem) instead of fixed pixels for layout elements.</li>
+                  <li><strong>Flexible Images & Media:</strong> Images and videos scale within their containing elements.</li>
+                  <li><strong>Media Queries:</strong> CSS rules that apply styles based on device characteristics (width, orientation, resolution).</li>
+                  <li><strong>Mobile-First Approach:</strong> Design for the smallest screen first, then enhance for larger screens.</li>
+                  <li><strong>Touch-Friendly Elements:</strong> Buttons and links are large enough for easy tapping on mobile devices.</li>
+                  <li><strong>Performance Optimization:</strong> Minimize file sizes and requests for faster loading on all devices.</li>
+                </ul>
+                <h4>Best Practices:</h4>
+                <ul>
+                  <li>Use CSS frameworks like Bootstrap or Tailwind for responsive grids.</li>
+                  <li>Test layouts on multiple devices and browsers.</li>
+                  <li>Avoid fixed-width layouts.</li>
+                  <li>Hide or rearrange non-essential content on smaller screens.</li>
+                  <li>Use viewport meta tags for proper scaling.</li>
+                </ul>
+                <h4>Example:</h4>
+                <ul>
+                  <li>A product grid that displays four columns on desktop, two columns on tablet, and one column on mobile.</li>
+                  <li>Navigation menu that collapses into a hamburger icon on small screens.</li>
+                </ul>
+              </section>
             </div>
           </section>
 
