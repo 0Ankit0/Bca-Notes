@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Computer Science and Fundamentals</title>
+    <link rel="stylesheet" href="../../../styles/common.css" />
+  </head>
+  <body>
+    <div
+      style="
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1
+        style="
+          text-align: center;
+          color: #004085;
+          border-bottom: 2px solid #0056b3;
+          padding-bottom: 5px;
+          margin-top: 20px;
+        "
+      >
+        Introduction to Computer Science and Fundamentals
+      </h1>
+
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Focus:</strong> This unit lays the groundwork for
+        understanding computers. Pay close attention to definitions, historical
+        context, characteristics, types, and applications, as these are
+        frequently tested concepts.
+      </p>
+
+      <h2>1.1 Definition of Computer</h2>
+      <figure>
+        <img
+          src="https://www.techgeekbuzz.com/media/uploads/vijay/2023/07/12/functions_of_computer-1.jpg"
+          alt="Basic Structure of Computer"
+          style="
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+          "
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Basic Structure of Computer
+        </figcaption>
+      </figure>
+      <p>
+        A computer is an advanced electronic device that operates on the
+        principle of the IPOS cycle: Input, Process, Output, and Storage. It
+        takes raw data as <strong>Input</strong> from the user or other sources
+        (e.g., keyboard, mouse, sensors). This data is then
+        <strong>Processed</strong> under the control of a set of instructions (a
+        program), transforming it into meaningful information. The result of
+        this processing is then presented as <strong>Output</strong> (e.g., on a
+        screen, printer, or speakers). Finally, this output or intermediate data
+        can be <strong>Stored</strong> for future use or retrieval. Essentially,
+        a computer is a programmable machine designed to automatically carry out
+        a sequence of arithmetic or logical operations with high speed and
+        accuracy, making it a powerful tool for data manipulation and
+        problem-solving.
+      </p>
+
+      <h2>1.2 History of Computer</h2>
+      <p>
+        The journey of computers began long before the electronic devices we
+        know today. Early computing devices were mechanical, designed to aid in
+        calculations. Key milestones include:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Abacus (circa 2700–2300 BC):</strong> One of the earliest
+          known computing devices, used for basic arithmetic, particularly in
+          ancient civilizations for trade and accounting. Its simple yet
+          effective design allowed for manual calculation of sums and
+          differences.
+        </li>
+        <li>
+          <strong>Napier's Bones (1617):</strong> Invented by John Napier, these
+          were manual calculating tools used for multiplication and division,
+          simplifying complex calculations through a system of movable rods with
+          numbers inscribed on them.
+        </li>
+        <li>
+          <strong>Pascaline (1642):</strong> Blaise Pascal invented this
+          mechanical calculator, capable of addition and subtraction. It was one
+          of the first mechanical calculators that could perform arithmetic
+          operations automatically, albeit limited to addition and subtraction.
+        </li>
+        <li>
+          <strong>Leibniz Calculator (1672):</strong> Gottfried Leibniz improved
+          upon Pascal's design, adding multiplication and division capabilities.
+          This marked a significant step towards more versatile mechanical
+          computation.
+        </li>
+        <li>
+          <strong
+            >Difference Engine and Analytical Engine (1820s-1830s):</strong
+          >
+          Charles Babbage, often considered the "Father of the Computer,"
+          conceptualized these machines. The Difference Engine was designed to
+          compute polynomial functions, while the Analytical Engine was a more
+          ambitious, general-purpose programmable computing machine, featuring a
+          'mill' (CPU), 'store' (memory), and input/output devices, laying
+          theoretical groundwork for modern computers.
+        </li>
+        <li>
+          <strong>Tabulating Machine (1890):</strong> Herman Hollerith developed
+          this machine to process data for the U.S. Census, using punched cards.
+          This invention significantly reduced the time required for data
+          tabulation and marked the beginning of automated data processing. His
+          company eventually became IBM.
+        </li>
+        <li>
+          <strong>Z1 (1938):</strong> Konrad Zuse created the first
+          electro-mechanical binary programmable computer. This pioneering
+          machine, though mechanical, introduced key concepts like binary
+          representation and programmability.
+        </li>
+        <li>
+          <strong>Atanasoff-Berry Computer (ABC) (1937-1942):</strong>
+          Considered the first electronic digital computing device, it
+          introduced concepts like binary arithmetic and regenerative memory,
+          laying crucial groundwork for future electronic computers.
+        </li>
+        <li>
+          <strong
+            >ENIAC (Electronic Numerical Integrator and Computer)
+            (1946):</strong
+          >
+          The first general-purpose electronic digital computer, built for the
+          U.S. Army. Its immense size and power marked a new era in computation,
+          capable of solving a wide range of numerical problems.
+        </li>
+        <li>
+          <strong>UNIVAC I (Universal Automatic Computer I) (1951):</strong> The
+          first commercial computer produced in the United States, notable for
+          handling both numerical and textual information and for its role in
+          predicting the 1952 presidential election.
+        </li>
+        <iframe
+          width="853"
+          height="480"
+          src="https://www.youtube.com/embed/Ow1BLT29p9w"
+          title="History Of Computer | Full History And Evolution Of Computers Till Date"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </ul>
+
+      <h2>1.3 Generations of Computer</h2>
+      <p>
+        The evolution of computers is often categorized into generations, each
+        defined by significant technological advancements that led to more
+        powerful, smaller, cheaper, and efficient machines. Understanding these
+        generations provides insight into the rapid progress of computing
+        technology.
+      </p>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Expect questions asking you to
+        explain the different generations of computers in detail, including
+        their core technologies and characteristics.
+      </p>
+      <table
+        border="1"
+        style="width: 100%; border-collapse: collapse; margin: 20px 0"
+      >
+        <thead>
+          <tr>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Generation
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Period
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Core Technology
+            </th>
+            <th
+              style="
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                background-color: #0056b3;
+                color: white;
+              "
+            >
+              Key Features & Characteristics
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              First Generation
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              1940 - 1956
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Vacuum Tubes
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <ul style="list-style-type: disc; margin-left: 20px">
+                <li>
+                  <strong>Core Technology:</strong> Used thousands of vacuum
+                  tubes for circuitry and magnetic drums for memory.
+                </li>
+                <li>
+                  <strong>Programming:</strong> Programmed in machine language
+                  (binary), a very difficult and error-prone process.
+                  Programmers had to manually set switches and plug/unplug
+                  cables.
+                </li>
+                <li>
+                  <strong>Size and Cost:</strong> Extremely large, often taking
+                  up entire rooms. They were very expensive to build and
+                  operate.
+                </li>
+                <li>
+                  <strong>Power and Heat:</strong> Consumed a great deal of
+                  electricity and generated immense heat, leading to frequent
+                  breakdowns and a need for extensive cooling systems.
+                </li>
+                <li>
+                  <strong>Input/Output:</strong> Relied on punched cards and
+                  paper tape for input, and printouts for output, which was a
+                  very slow process.
+                </li>
+                <li>
+                  <strong>Examples:</strong> ENIAC (Electronic Numerical
+                  Integrator and Computer), UNIVAC I (Universal Automatic
+                  Computer I). These were primarily used for scientific and
+                  military calculations, such as ballistics trajectories and
+                  atomic energy calculations.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Second Generation
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              1956 - 1963
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Transistors
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <ul style="list-style-type: disc; margin-left: 20px">
+                <li>
+                  <strong>Core Technology:</strong> The invention of the
+                  transistor replaced bulky vacuum tubes. Transistors were
+                  smaller, faster, cheaper, more energy-efficient, and more
+                  reliable.
+                </li>
+                <li>
+                  <strong>Programming:</strong> Moved from machine language to
+                  assembly language, which used symbolic codes (mnemonics) and
+                  was easier to write. High-level programming languages like
+                  FORTRAN (for scientific and engineering applications) and
+                  COBOL (for business applications) were also developed.
+                </li>
+                <li>
+                  <strong>Size and Cost:</strong> Significantly smaller and
+                  cheaper than first-generation computers, making them more
+                  accessible to businesses and universities.
+                </li>
+                <li>
+                  <strong>Performance:</strong> Faster and more reliable, with
+                  reduced heat output and lower power consumption.
+                </li>
+                <li>
+                  <strong>Input/Output:</strong> Still used punched cards and
+                  printouts, but with improvements in speed.
+                </li>
+                <li>
+                  <strong>Examples:</strong> IBM 7094, CDC 1604. These computers
+                  were used for a wider range of applications, including
+                  business data processing and scientific research.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Third Generation
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              1964 - 1971
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Integrated Circuits (ICs)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <ul style="list-style-type: disc; margin-left: 20px">
+                <li>
+                  <strong>Core Technology:</strong> The development of the
+                  integrated circuit (IC), which placed many transistors,
+                  resistors, and capacitors on a single silicon chip, was a
+                  major breakthrough.
+                </li>
+                <li>
+                  <strong>Performance:</strong> This miniaturization
+                  dramatically increased the speed and efficiency of computers
+                  while reducing their size and cost even further.
+                </li>
+                <li>
+                  <strong>Operating Systems:</strong> The introduction of
+                  operating systems allowed the computer to manage its own
+                  resources, enabling multitasking (running multiple programs at
+                  once) and making the computer more interactive.
+                </li>
+                <li>
+                  <strong>User Interface:</strong> Users interacted with the
+                  computer through keyboards and monitors for the first time, a
+                  significant improvement over punched cards and printouts.
+                </li>
+                <li>
+                  <strong>Programming:</strong> High-level languages became more
+                  widespread and standardized, making programming more
+                  accessible to a broader audience.
+                </li>
+                <li>
+                  <strong>Examples:</strong> IBM System/360, PDP-8. These
+                  computers were used in a wide variety of industries for
+                  applications like data processing, scientific analysis, and
+                  industrial control.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Fourth Generation
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              1971 - Present
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Microprocessors (VLSI)
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <ul style="list-style-type: disc; margin-left: 20px">
+                <li>
+                  <strong>Core Technology:</strong> The invention of the
+                  microprocessor, which integrated the entire CPU onto a single
+                  chip using Very Large Scale Integration (VLSI) technology.
+                </li>
+                <li>
+                  <strong>Personal Computers (PCs):</strong> This led to the
+                  development of personal computers (PCs), making computing
+                  accessible to individuals for the first time.
+                </li>
+                <li>
+                  <strong>Networking:</strong> The development of computer
+                  networks, including the internet, allowed computers to connect
+                  and share information globally.
+                </li>
+                <li>
+                  <strong>User Interface:</strong> The introduction of Graphical
+                  User Interfaces (GUIs), with windows, icons, menus, and a
+                  mouse, made computers much more user-friendly and intuitive.
+                </li>
+                <li>
+                  <strong>Software:</strong> A wide range of application
+                  software became available, from word processors and
+                  spreadsheets to games and multimedia applications.
+                </li>
+                <li>
+                  <strong>Examples:</strong> Apple Macintosh, IBM PC. This
+                  generation democratized computing and led to the digital
+                  revolution we see today.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Fifth Generation
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Present & Beyond
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              AI, Parallel Processing, Quantum Computing
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              <ul style="list-style-type: disc; margin-left: 20px">
+                <li>
+                  <strong>Core Focus:</strong> This generation is based on the
+                  concept of Artificial Intelligence (AI), where computers can
+                  understand natural language, learn, and reason like humans.
+                </li>
+                <li>
+                  <strong>Parallel Processing:</strong> The use of multiple
+                  processors working in parallel to solve complex problems, a
+                  key architecture for AI and supercomputing.
+                </li>
+                <li>
+                  <strong>Emerging Technologies:</strong> The development of new
+                  technologies like quantum computing and nanotechnology
+                  promises to revolutionize computing power and capabilities.
+                </li>
+                <li>
+                  <strong>Applications:</strong> AI is being used in a wide
+                  range of applications, including expert systems, natural
+                  language processing, robotics, and machine learning.
+                </li>
+                <li>
+                  <strong>Goal:</strong> The ultimate goal of this generation is
+                  to create computers that are truly intelligent and can
+                  interact with the world in a more natural and human-like way.
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Each generation brought about a revolution in computing, making
+        computers more accessible, powerful, and integrated into daily life.
+        From room-sized machines to pocket-sized devices, the journey of
+        computer generations highlights continuous innovation and
+        miniaturization.
+      </p>
+      <iframe
+        width="853"
+        height="480"
+        src="https://www.youtube.com/embed/MAmdbGkLVdQ?start=44"
+        title="What Are the Five Generations of Computers ? | 1st - 5th Generation Computers &amp; Technology."
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        width="780"
+        height="551"
+        src="https://www.youtube.com/embed/WhNyURBiJcU"
+        title="How transistors work - Gokul J. Krishnan"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <h2>1.4 Types of Computer</h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Be prepared to differentiate
+        between computer types based on size, speed, and data representation.
+      </p>
+      <h3 style="color: #0056b3; margin-top: 15px">
+        1.4.1 Based on Data Representation
+      </h3>
+      <figure>
+        <img
+          src="https://artoftesting.com/wp-content/uploads/2021/01/types-computers-data-type.png"
+          alt="Types of Computer based on Data Representation"
+          style="max-width: 100%; height: auto; border: 1px solid #ddd"
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Types of Computer based on Data Representation
+        </figcaption>
+      </figure>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Digital Computers:</strong> These computers process
+          information that is in a binary or two-state format, either 0 or 1.
+          They are known for their high accuracy and speed. Digital computers
+          are used for a wide variety of applications, including business,
+          education, and entertainment. Examples include personal computers
+          (PCs), laptops, smartphones, and digital watches.
+        </li>
+        <li>
+          <strong>Analog Computers:</strong> These computers process data that
+          is continuous in nature, such as temperature, pressure, or voltage.
+          They are not as precise as digital computers but can be very fast for
+          certain types of problems. Analog computers are often used in
+          scientific and industrial applications, such as in control systems and
+          for simulation.
+        </li>
+        <li>
+          <strong>Hybrid Computers:</strong> These computers combine features of
+          both analog and digital computers. They have the speed of analog
+          computers and the accuracy of digital computers. Hybrid computers are
+          used for specialized applications where both types of data need to be
+          processed, such as in medical equipment (e.g., ECG machines) and in
+          scientific research.
+        </li>
+      </ul>
+      <h3 style="color: #0056b3; margin-top: 15px">
+        1.4.2 Based on Capacity and Size
+      </h3>
+      <figure>
+        <img
+          src="https://artoftesting.com/wp-content/uploads/2021/01/types-of-computers-purpose.png"
+          alt="Types of Computer based on Capacity and Size"
+          style="max-width: 100%; height: auto; border: 1px solid #ddd"
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Types of Computer based on Capacity and Size
+        </figcaption>
+      </figure>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Microcomputers (Personal Computers - PCs):</strong> These are
+          the most common type of computer, designed for individual use. They
+          are relatively inexpensive and are used for a wide variety of tasks,
+          such as word processing, browsing the internet, and playing games.
+          Examples include desktop computers, laptops, tablets, and smartphones.
+        </li>
+        <li>
+          <strong>Minicomputers:</strong> These are mid-range computers that are
+          more powerful than microcomputers but less powerful than mainframes.
+          They are often used as servers in a network environment, supporting
+          multiple users at the same time. Minicomputers are used in small and
+          medium-sized businesses for applications such as accounting, inventory
+          management, and customer relationship management.
+        </li>
+        <li>
+          <strong>Mainframe Computers:</strong> These are large, powerful, and
+          expensive computers that are used by large organizations for critical
+          applications, such as bulk data processing, enterprise resource
+          planning, and transaction processing. Mainframes are known for their
+          high reliability, availability, and security. They are used by banks,
+          airlines, and government agencies.
+        </li>
+        <li>
+          <strong>Supercomputers:</strong> These are the fastest and most
+          powerful type of computer. They are used for complex scientific and
+          engineering calculations, such as weather forecasting, climate
+          modeling, and molecular modeling. Supercomputers are very expensive
+          and are owned by large research organizations and government agencies.
+        </li>
+      </ul>
+
+      <h2>1.5 Characteristics of Computer</h2>
+      <figure>
+        <img
+          src="https://www.tutorialspoint.com/computer_concepts/images/characteristics_of_computer.jpg"
+          alt="Characteristics of Computer"
+          style="
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+          "
+        />
+        <figcaption
+          style="text-align: center; font-style: italic; margin-top: 5px"
+        >
+          Characteristics of Computer
+        </figcaption>
+      </figure>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;
+        "
+      >
+        <strong>Exam Question Alert:</strong> Understanding the unique
+        characteristics of computers is vital. You might be asked to explain
+        these in detail.
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Speed:</strong> A computer is a very fast device. It can
+          perform a large amount of calculations in a few seconds. The speed of
+          a computer is measured in terms of microseconds (10^-6), nanoseconds
+          (10^-9), and picoseconds (10^-12). A powerful computer is capable of
+          performing about 3-4 million simple instructions per second.
+        </li>
+        <li>
+          <strong>Accuracy:</strong> The accuracy of a computer is consistently
+          high. The degree of accuracy of a particular computer depends on its
+          design. Errors can occur in a computer, but these are mainly due to
+          human rather than technological weakness. This is often referred to as
+          Garbage In, Garbage Out (GIGO).
+        </li>
+        <li>
+          <strong>Diligence:</strong> A computer is free from tiredness, lack of
+          concentration, fatigue, etc. It can work for hours without creating
+          any error. If millions of calculations are to be performed, a computer
+          will perform every calculation with the same accuracy. Due to this
+          capability, it is more reliable than human beings.
+        </li>
+        <li>
+          <strong>Versatility:</strong> Versatility is one of the most wonderful
+          features of a computer. It can perform a wide range of tasks. One
+          moment it can be used to prepare a document, the next moment it can be
+          used to play a game, and so on. All this is possible by simply
+          changing the program that is loaded into the computer's memory.
+        </li>
+        <li>
+          <strong>Storage Capability:</strong> A computer has a very large
+          memory. It can store a large amount of data. The storage capacity of a
+          computer is measured in terms of kilobytes (KB), megabytes (MB),
+          gigabytes (GB), and terabytes (TB). A computer can store data for a
+          long time and can retrieve it whenever required.
+        </li>
+        <li>
+          <strong>Automation:</strong> A computer is an automatic machine. Once
+          a program is given to the computer, it can work automatically without
+          any human intervention. The computer can be programmed to perform a
+          series of tasks automatically.
+        </li>
+        <li>
+          <strong>Reliability:</strong> A computer is a reliable machine. Modern
+          electronic components have long lives. Computers are designed to make
+          maintenance easy.
+        </li>
+      </ul>
+
+      <h2>1.6 Applications of Computer</h2>
+      <p
+        style="
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #fff3cd;
+          border-left: 5px solid #ffc107;
+          color: #856404;
+          font-weight: bold;r
+        "
+      >
+        <strong>Exam Question Alert:</strong> Be prepared to discuss the diverse
+        application areas of computers in the real world.
+      </p>
+      <p>
+        Computers have become indispensable in almost every aspect of modern
+        life, revolutionizing industries and daily activities. Some key
+        application areas include:
+      </p>
+      <ul style="list-style-type: disc; margin-left: 20px">
+        <li>
+          <strong>Business:</strong> Computers are used in business
+          organizations for payroll calculations, budgeting, sales analysis,
+          financial forecasting, managing employees database, and stock control.
+          They are also used for electronic commerce (e-commerce) which includes
+          online shopping, net banking, and online trading.
+        </li>
+        <li>
+          <strong>Education:</strong> Computers are used in education for online
+          classes, online examinations, referring e-books, online tutoring, and
+          computer-based training. They are also used by teachers to prepare
+          notes and presentations.
+        </li>
+        <li>
+          <strong>Healthcare:</strong> Computers are used in hospitals to
+          maintain the records of patients, diagnose diseases, and to monitor
+          the condition of patients. They are also used in medical research.
+        </li>
+        <li>
+          <strong>Communication:</strong> Computers are used for communication
+          through email, instant messaging, and video conferencing. They are
+          also used to access the internet, which is a vast source of
+          information.
+        </li>
+        <li>
+          <strong>Scientific Research and Engineering:</strong> Computers are
+          used in scientific research for complex calculations, data analysis,
+          and simulation. They are used in engineering for designing and testing
+          new products.
+        </li>
+        <li>
+          <strong>Entertainment:</strong> Computers power the entertainment
+          industry, from sophisticated gaming experiences and movie production
+          (CGI) to music creation, streaming services, and immersive virtual _n
+          reality. They provide rich, interactive, and diverse forms of digital
+          entertainment.
+        </li>
+        <li>
+          <strong>Banking and Finance:</strong> Computers are critical in
+          banking and finance, enabling online banking, real-time stock trading,
+          automated teller machine (ATM) services, sophisticated financial
+          forecasting, and robust fraud detection systems. They ensure secure
+          and efficient financial transactions.
+        </li>
+        <li>
+          <strong>Government:</strong> Governments utilize computers for
+          managing census data, national defense systems, law enforcement
+          operations, maintaining public records, and implementing e-governance
+          initiatives to deliver public services more efficiently. They enhance
+          administrative capabilities and public safety.
+        </li>
+      </ul>
+
+      <div class="important-questions">
+        <h2>Important Questions</h2>
+        <ul>
+          <li>
+            Define Computer? Explain different generations of computer in
+            details. (8)
+          </li>
+          <li>
+            Define computer. Explain different types of computer on the basis of
+            size and speed. (7)
+          </li>
+          <li>
+            Define Computer. Explain the characteristics of computer in details.
+            (8)
+          </li>
+          <li>
+            Define Computer. Write down the application areas of computer in
+            details. (8)
+          </li>
+          <li>
+            What is computer? Explain the different generations of computer with
+            major electronic components and other related technologies. (7)
+          </li>
+          <li>
+            Briefly explain history of computer. What is the role of IT in a
+            competitive market? (7)
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="navigation"
+        style="
+          margin-top: 40px;
+          background-color: #e9f7ef;
+          border-left: 5px solid #28a745;
+          padding: 15px;
+          border-radius: 8px;
+        "
+      >
+        <h2 style="color: #004085; margin-top: 0; margin-bottom: 10px">
+          Navigation
+        </h2>
+        <ul
+          style="
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+          "
+        >
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="index.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Home</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="basic-organization-of-computer.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 2</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="computer-software.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 3</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="computer-accessories.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 4</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="storage.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 5</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="data-communication-and-computer-network.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 6</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="operating-system.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 7</a
+            >
+          </li>
+          <li
+            style="
+              display: inline-block;
+              background-color: #0056b3;
+              padding: 8px 15px;
+              border-radius: 5px;
+            "
+          >
+            <a
+              href="ai-and-emerging-technologies.html"
+              style="color: white; text-decoration: none; font-weight: bold"
+              >Unit 8</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
