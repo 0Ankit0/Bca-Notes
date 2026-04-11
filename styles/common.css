@@ -60,3 +60,32 @@ main { padding: 1.5rem 0 2.5rem; }
 h2, h3 { color: #0f255f; }
 ul, ol { padding-left: 1.2rem; }
 .footer-note { color: var(--muted); font-size: .9rem; margin-top: 1rem; }
+
+.exercise-form .exercise-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .9rem;
+  margin-bottom: .9rem;
+}
+.exercise-option { display: block; margin: .4rem 0; }
+.exercise-hint { color: var(--muted); font-size: .95rem; margin: .2rem 0 .5rem; }
+.exercise-text-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .55rem;
+  font: inherit;
+}
+.exercise-feedback { margin-top: .5rem; font-weight: 600; }
+.exercise-explanation { display: none; color: #1f3f80; background: var(--primary-soft); padding: .5rem; border-radius: 8px; }
+.show-explanations .exercise-explanation { display: block; }
+.exercise-actions button {
+  border: 1px solid #1d4ed8;
+  background: #1d4ed8;
+  color: #fff;
+  border-radius: 8px;
+  padding: .45rem .8rem;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+.exercise-actions button[type="button"] { background: #fff; color: #1d4ed8; }
