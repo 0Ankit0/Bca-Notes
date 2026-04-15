@@ -89,3 +89,19 @@ ul, ol { padding-left: 1.2rem; }
   cursor: pointer;
 }
 .exercise-actions button[type="button"] { background: #fff; color: #1d4ed8; }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .6rem;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: .55rem .65rem;
+  text-align: left;
+}
+th {
+  background: var(--primary-soft);
+  color: #12306f;
+}
