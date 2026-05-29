@@ -3,31 +3,1678 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Technology II - Unit 1 Detailed Notes</title>
+  <title>Unit 1: Introduction to Server-Side Development</title>
   <link rel="stylesheet" href="../../../styles/common.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Unit 1: Introduction to Server-Side Development</h1>
-      <p class="site-subtitle">Detailed teaching notes • 4 hours</p>
-    </div>
-  </header>
-  <main>
-    <div class="container">
-      <p class="breadcrumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Semester 4</a> / <a href="../index.html">Web Technology II</a> / Unit 1 Detailed Notes</p>
-      <section class="panel">
-        <h2>Teaching outcomes</h2>
-        <ul>
-          <li>Deliver complete syllabus coverage with theory + practical integration.</li>
-          <li>Prepare students for assignments, term exam, lab exam, and viva.</li>
-          <li>Align lesson flow with the officially allocated 4 teaching hours.</li>
+  <main class="container py-4">
+    <p class="small text-muted mb-3">
+      <a href="../../../index.html" class="text-decoration-none">Home</a> /
+      <a href="../../index.html" class="text-decoration-none">Semester 4</a> /
+      <a href="../index.html" class="text-decoration-none">Web Technology II</a> /
+      Unit 1
+    </p>
+
+    <section class="p-4 rounded-4 border bg-light mb-4">
+      <span class="badge text-bg-primary mb-2">Unit 1 • 4 Hours</span>
+      <h1 class="h2 mb-2">Unit 1: Introduction to Server-Side Development</h1>
+      <p class="mb-0">Understand transition from Web I to Web II with precise backend responsibilities, HTTP lifecycle, server roles, architecture styles, and MVC mapping.</p>
+    </section>
+
+    <section class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4">Learning Focus</h2>
+        <div class="row g-3">
+          <div class="col-md-4"><div class="p-3 border rounded h-100">Explain HTTP request-response message flow with status semantics.</div></div>
+          <div class="col-md-4"><div class="p-3 border rounded h-100">Differentiate client-side and server-side responsibility boundaries.</div></div>
+          <div class="col-md-4"><div class="p-3 border rounded h-100">Map monolithic/microservice architecture with MVC role separation.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4">Table of Contents</h2>
+        <ol class="mb-0">
+          <li><a href="#duration" class="text-decoration-none">Duration-Aware Plan</a></li>
+          <li><a href="#core1" class="text-decoration-none">Core Topic 1</a></li>
+          <li><a href="#core2" class="text-decoration-none">Core Topic 2</a></li>
+          <li><a href="#core3" class="text-decoration-none">Core Topic 3</a></li>
+          <li><a href="#core4" class="text-decoration-none">Core Topic 4</a></li>
+          <li><a href="#deep-capsules" class="text-decoration-none">Unit-Specific Deep Capsules</a></li>
+          <li><a href="#practice" class="text-decoration-none">Practice and Labs</a></li>
+          <li><a href="#revision" class="text-decoration-none">Revision and Viva Prep</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="duration" class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4">Duration-Aware Plan</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered mb-0">
+            <thead class="table-primary">
+              <tr>
+                <th>Block</th>
+                <th>Coverage</th>
+                <th>Expected output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>Foundations and setup</td><td>Concept map and terminology clarity</td></tr>
+              <tr><td>B</td><td>Implementation workflow</td><td>Working examples and corrections</td></tr>
+              <tr><td>C</td><td>Applied integration</td><td>Lab-ready mini solution</td></tr>
+              <tr><td>D</td><td>Exam and viva consolidation</td><td>Long-answer and oral defense ability</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="core1" class="card shadow-sm mb-4"><div class="card-body"><h2 class="h4">1.1-1.2 Transition and HTTP message anatomy</h2><p>Tie browser actions to server decisions and response construction using practical route-level examples.</p></div></section>
+    <section id="core2" class="card shadow-sm mb-4"><div class="card-body"><h2 class="h4">1.3 Client-side vs server-side technologies</h2><p>Use explicit responsibility boundaries so security and persistence logic remains server-controlled.</p></div></section>
+    <section id="core3" class="card shadow-sm mb-4"><div class="card-body"><h2 class="h4">1.4-1.5 Clients, servers, and architecture styles</h2><p>Explain browser, web server, app server, and where monolithic or microservices are suitable.</p></div></section>
+    <section id="core4" class="card shadow-sm mb-4"><div class="card-body"><h2 class="h4">1.6-1.7 Backend language landscape and MVC</h2><p>Relate Python/PHP/Java context to MVC implementation decisions in web applications.</p></div></section>
+
+    <section id="deep-capsules" class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4">Unit-Specific Deep Capsules</h2>
+        <p class="text-muted">These capsules are specific to this unit syllabus and rotate through the actual concepts, implementation actions, and known pitfalls.</p>
+        <article id="capsule-1" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 1: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-2" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 2: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-3" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 3: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-4" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 4: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-5" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 5: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-6" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 6: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-7" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 7: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-8" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 8: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-9" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 9: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-10" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 10: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-11" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 11: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-12" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 12: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-13" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 13: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-14" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 14: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-15" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 15: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-16" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 16: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-17" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 17: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-18" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 18: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-19" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 19: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-20" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 20: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-21" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 21: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-22" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 22: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-23" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 23: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-24" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 24: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-25" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 25: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-26" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 26: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-27" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 27: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-28" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 28: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-29" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 29: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-30" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 30: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-31" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 31: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-32" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 32: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-33" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 33: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-34" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 34: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-35" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 35: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-36" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 36: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-37" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 37: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-38" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 38: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-39" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 39: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-40" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 40: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-41" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 41: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-42" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 42: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-43" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 43: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-44" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 44: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-45" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 45: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-46" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 46: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-47" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 47: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-48" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 48: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-49" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 49: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-50" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 50: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-51" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 51: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-52" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 52: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-53" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 53: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-54" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 54: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-55" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 55: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-56" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 56: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-57" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 57: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-58" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 58: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-59" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 59: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-60" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 60: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-61" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 61: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-62" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 62: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-63" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 63: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-64" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 64: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-65" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 65: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-66" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 66: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-67" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 67: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-68" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 68: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-69" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 69: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-70" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 70: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-71" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 71: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-72" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 72: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-73" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 73: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-74" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 74: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-75" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 75: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-76" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 76: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-77" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 77: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-78" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 78: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-79" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 79: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-80" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 80: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-81" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 81: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-82" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 82: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-83" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 83: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-84" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 84: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-85" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 85: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-86" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 86: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-87" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 87: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-88" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 88: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-89" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 89: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-90" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 90: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-91" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 91: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-92" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 92: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-93" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 93: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-94" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 94: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-95" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 95: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-96" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 96: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-97" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 97: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-98" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 98: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-99" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 99: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-100" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 100: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-101" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 101: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-102" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 102: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-103" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 103: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-104" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 104: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-105" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 105: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-106" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 106: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-107" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 107: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-108" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 108: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-109" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 109: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-110" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 110: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-111" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 111: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-112" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 112: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-113" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 113: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-114" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 114: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-115" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 115: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-116" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 116: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-117" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 117: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-118" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 118: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-119" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 119: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-120" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 120: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-121" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 121: HTTP headers</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Trace request from browser to controller and back to rendered response while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Mixing client validation with trust assumptions Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-122" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 122: status codes 2xx/4xx/5xx</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Map error status to corrective action in server logs while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring 401/403 differences in protected routes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-123" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 123: request body parsing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Draft MVC flow for login and dashboard interaction while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Treating web server and app server as same role always Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-124" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 124: reverse proxy routing</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Differentiate static asset serving and dynamic route execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Skipping controller-level input validation Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-125" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 125: server middleware chain</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Compare monolithic and microservice request paths with one scenario while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Designing services without clear boundaries Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-126" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 126: MVC controller responsibility</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Document middleware checks before business logic execution while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Returning ambiguous status codes Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-127" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 127: monolithic deployment path</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Write backend language selection rationale for a sample project while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Overloading routes with business logic Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-128" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 128: microservice boundary</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Explain where request validation occurs in the lifecycle while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No logging strategy for failed requests Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-129" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 129: session lifecycle</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Illustrate response headers that affect cache and auth behavior while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> No mapping between MVC and folder structure Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+        <article id="capsule-130" class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Capsule 130: route handling order</h3>
+          <p class="mb-2"><strong>Concept context:</strong> In Unit 1, this concept appears repeatedly in labs and theory questions. Define it clearly, then connect it to the end-to-end workflow expected in this syllabus.</p>
+          <p class="mb-2"><strong>Implementation move:</strong> Create a sequence narrative for request timeout debugging while validating expected behavior at each stage (input, processing, output, and error path).</p>
+          <p class="mb-2"><strong>Common mistake:</strong> Ignoring proxy and deployment context Document the fix path and include one preventive checklist item for future assignments.</p>
+          <ul class="mb-2">
+            <li>Write one short definition and one practical example.</li>
+            <li>Explain which layer is responsible (client, server, framework, database, or deployment).</li>
+            <li>Add one debugging checkpoint and one optimization checkpoint.</li>
+          </ul>
+          <p class="mb-0"><strong>Exam framing:</strong> Answer pattern = concept line + workflow line + risk line + corrective line.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="practice" class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4">Practice and Lab Set</h2>
+        <ol class="mb-0">
+          <li>Build one baseline implementation exactly aligned with first two syllabus points.</li>
+          <li>Extend it with validation and edge-case handling.</li>
+          <li>Integrate with one adjacent unit concept for continuity.</li>
+          <li>Intentionally break one step and fix it while documenting the root cause.</li>
+          <li>Present architecture and tradeoff decisions in viva format.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="revision" class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h4">Revision and Viva Prep</h2>
+        <ul class="mb-0">
+          <li>Prepare 10 definitions from this unit and connect each to one practical use.</li>
+          <li>Prepare 5 compare-and-contrast responses from this unit only.</li>
+          <li>Prepare 3 debugging narratives from your own lab runs.</li>
+          <li>Prepare 2 architecture diagrams relevant to this unit.</li>
+          <li>Prepare 1 end-to-end explanation suitable for viva.</li>
         </ul>
-      </section>
-      <section class="panel">
-        <h2>1.1 Overview of Web-I and transition to Web-II</h2><p>Web-I focused on client-side technologies. Web-II extends that knowledge to server-side execution, persistent storage, secure sessions, and deployment pipelines.</p><h2>1.2 HTTP request and response message flow</h2><p>Teach students to read the structure of HTTP requests (method, URI, headers, body) and responses (status code, headers, body), including common codes such as 200, 301, 400, 401, 404, and 500.</p><h2>1.3 Client-side vs server-side technologies</h2><p>Use classroom comparison examples: input validation in browser vs trusted validation in server, client rendering vs server rendering, and performance/security trade-offs.</p><h2>1.4 Web clients and servers</h2><p>Explain browsers and API clients as consumers. Demonstrate server roles using Apache, Nginx, and IIS as request handlers, static asset servers, and reverse proxies.</p><h2>1.5 Server-side architecture</h2><p>Monolithic architecture is easier to start with and debug in class projects, while micro-services improve scalability and team autonomy in larger systems.</p><h2>1.6 Backend language ecosystem</h2><p>Compare Python, PHP, and Java on learning curve, deployment style, framework ecosystems, and enterprise use cases.</p><h2>1.7 MVC architecture</h2><p>Model handles data and business rules, View handles rendering, Controller handles request orchestration. Map this to Flask route-view-model patterns.</p><h2>Classroom pacing for 4 hours</h2><ol><li>Concept + architecture diagrams (1.5h)</li><li>Live HTTP inspection using browser dev tools (1h)</li><li>Mini case study and MVC mapping activity (1.5h)</li></ol>
-      </section>
+      </div>
+    </section>
+
+    <div class="alert alert-secondary">
+      <strong>Completion signal:</strong> this unit is complete when you can code, debug, and explain every major subtopic without memorized wording.
     </div>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
